@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>1001模板</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<!--<link href="css/style.css" rel="stylesheet" />-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.title {
+				margin: 12px 15px 8px;
+				color: #666666;
+				font-size: 15px;
+			}
+			
+			.table-group {
+				margin-top: 8px;
+			}
+			
+			label,
+			.checkbox-group,
+			.input-title {
+				color: #333333;
+				font-size: 15px;
+			}
+			input,select {
+				font-size: 15px;
+				color: #666666;
+			}
+			select {
+				flex: 1;
+				height: 35px;
+				margin-top: 5px;
+				margin-bottom: 2px;
+				padding: 0px;
+			}
+			
+			.input-title {
+				margin-top: 10px;
+			}
+			
+			.input-group {
+				border-bottom: 1px solid #dddddd;
+				padding-right: 10px;
+				margin-top: 8px;
+			}
+			
+			.select-group {
+				padding-right: 10px;
+			}
+			
+			.input-group input {
+				/*border-width: 0;*/
+				border: 0px solid red;
+				padding-left: 0px;
+				padding-bottom: 0;
+				padding-top: 0;
+				height: 34px;
+				margin-top: 5px;
+				margin-bottom: 2px;
+			}
+			
+			.picker-group input {
+				border: 0px solid red;
+				flex: 1;
+				height: 34px;
+				margin-bottom: 2px;
+				padding-left: 0px;
+			}
+			
+			.picker-icon {
+				/*height: 8px;
+				width: 14px;*/
+			}
+			
+			.picker-item {
+				color: #999999;
+				padding: 0;
+				margin-top: 10px;
+				text-align: left;
+			}
+			
+			.select-group select {
+				margin-top: 6px;
+				padding-bottom: 0;
+				padding-top: 0;
+				padding-left: 2px;
+				color: #666666;
+			}
+			
+			.radio-group {
+				padding-top: 10px;
+				padding-bottom: 4px;
+			}
+			
+			.input-radio {
+				width: 18px;
+				height: 18px;
+				margin-right: 4px;
+			}
+			
+			.checkbox-group {
+				border-bottom: 1px solid #dddddd;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				padding-right: 10px;
+			}
+			
+			.checkbox-group .input-checkbox {
+				margin-right: 10px;
+				margin-bottom: 12px;
+			}
+			
+			.checkbox-group .input-title {
+				margin-top: 8px;
+			}
+			
+			.picker-group {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			
+			.time-group {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				padding-left: 24px;
+			}
+			
+			.time-group .input-time {
+				border: 0px solid red;
+				flex: 1;
+				height: 34px;
+				margin-bottom: 2px;
+				padding-left: 0px;
+			}
+			
+			.file_upload_box {
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				margin-top: 10px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.file_upload_box input[type=file] {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				cursor: pointer;
+			}
+			
+			.add-icon {
+				height: 80px;
+				width: 80px;
+			}
+			
+			.file_upload_box a {
+				display: inline-block;
+				width: 100%;
+				line-height: 45px;
+				text-align: center;
+				font-family: "Microsoft yahei";
+				background-color: #f60;
+				color: #FFF;
+				font-weight: 700;
+				text-decoration: none;
+			}
+			
+			.upload-group {
+				border: 1px solid red;
+				display: flex;
+				flex-direction: row;
+			}
+			
+			.upload-group div {
+				border: 1px solid red;
+				position: relative;
+				width: 33%;
+				margin-right: 5px;
+				height: 100%;
+			}
+			
+			.upload-img {
+				border: 1px solid red;
+				width: 100%;
+				height: 90px;
+			}
+			
+			.upload-img-del {
+				border: 1px solid red;
+				position: absolute;
+				top: -5px;
+				right: -5px;
+				height: 16px;
+				width: 16px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--<form id="form1" method="post">-->
+			<div class="title mui-content-padded">1 患者个人信息</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="input-group">
+						<div class="input-title">患者姓名</div>
+						<input id="userName" name="userName" type="text" class="mui-input-clear" placeholder="请输入姓名">
+					</div>
+					<div class="input-group">
+						<div class="input-title">身份证号</div>
+						<input id="idNumber" name="idNumber" type="text" class="mui-input-clear" placeholder="请输入身份证号">
+					</div>
+					<div class="input-group">
+						<div class="input-title">患者年龄</div>
+						<input id="age" type="text" class="mui-input-clear" placeholder="请输入身份证号">
+					</div>
+					<div class="input-group">
+						<div class="input-title">出生日期</div>
+						<div class="time-group" style="padding-left: 0;">
+							<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+							<img src="img/row_down.png" alt="" class="picker-icon" />
+						</div>
+					</div>
+					<div class="input-group">
+						<div class="input-title">性别</div>
+						<div class="picker-group" style="padding-left: 0;">
+							<select class="" id="sex" name="sex">
+								<option value="1">男</option>
+								<option value="2">女</option>
+							</select>
+							<img src="img/row_down.png" alt="" class="picker-icon" />
+						</div>
+					</div>
+					<div class="input-group" style="border-bottom: 0;">
+						<div class="input-title">地区</div>
+						<div class="picker-group">
+							<input type="text" readonly name="city1" value="" id="" class="cityPicker" placeholder="请选择">
+							<img src="img/row_down.png" alt="" class="picker-icon" />
+						</div>
+					</div>
+				</li>
+				<!--<li class="mui-table-view-cell">职业
+					<div class="picker-group">
+						<div class="mui-navigate-right picker-item" id="showUserPicker">请选择
+							<div>
+							</div>
+				</li>-->
+			</ul>
+			<!--</form>-->
+			<form id="form2">
+				<div class="title mui-content-padded">2 诊断及风险评估</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">2.01 房颤类型（多选）
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="1" id="checkbox1-1">
+							<label for="checkbox1-1">新发房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="time1" value="1970-01-01" id="" data-options='{"type":"date"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="2" id="checkbox1-2">
+							<label for="checkbox1-2">阵发性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="time2" value="1970-01-01" id="" data-options='{"type":"date"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="3" id="checkbox1-3">
+							<label for="checkbox1-3">持续性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="time3" value="1970-01-01" id="" data-options='{"type":"date"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="4" id="checkbox1-4">
+							<label for="checkbox1-4">长期持续性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="time4" value="" id="" data-options='{"type":"date","value":"1970-01-01"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="5" id="checkbox1-5">
+							<label for="checkbox1-5">永久性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="time5" value="" id="" data-options='{"type":"date","value":"1970-01-01"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="6" id="checkbox1-6">
+							<label for="checkbox1-6">无法判断类型AF</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="7" id="checkbox1-7">
+							<label for="checkbox1-7">典型房扑</label>
+							<div class="time-group">
+								<input type="text" readonly name="time7" value="" id="" data-options='{"type":"date","value":"1970-01-01"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="8">
+							<label for="checkbox1-8">非典型房扑</label>
+							<div class="time-group">
+								<input type="text" readonly name="time8" value="" id="" data-options='{"type":"date","value":"1970-01-01"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group" style="border-bottom: 0px;">
+							<input type="checkbox" class="input-checkbox" name="checkbox1" value="9">
+							<label for="checkbox1-9">无法判断类型的房扑</label>
+							<div class="time-group">
+								<input type="text" readonly name="time9" value="1977-03-03" id="" data-options='{"type":"date"}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.02 阵发性房颤填写
+						<div class="input-group">
+							<div class="input-title">
+								发作频度（次/月）
+							</div>
+							<input id="age" type="text" name="text1" class="mui-input-clear" placeholder="请填写">
+						</div>
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="input-title">
+								每次发作持续时间（小时）
+							</div>
+							<input id="age" type="text" name="text2" class="mui-input-clear" placeholder="请填写">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.03 持续性房颤填写
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="input-title">
+								每次发作持续时间（小时）
+							</div>
+							<input id="age" type="text" class="mui-input-clear" placeholder="请填写">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.04 永久性房颤填写
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="input-title">
+								每次发作持续时间（小时）
+							</div>
+							<input id="age" type="text" class="mui-input-clear" placeholder="请填写">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.05 房颤病史（月）
+						<div class="input-group" style="border-bottom: 0px;">
+							<input id="age" type="text" class="mui-input-clear" placeholder="请填写">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.06 基础疾病
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox2" value="1" id="checkbox2-1">
+							<label for="checkbox2-1">高血压</label>
+							<div class="time-group">
+								<input type="text" disabled value="" id="" class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox2" value="2" id="checkbox2-2">
+							<label for="checkbox2-2">冠心病</label>
+							<div class="time-group">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox2" value="3" id="checkbox2-3">
+							<label for="checkbox2-3">风心病</label>
+							<div class="time-group">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox2" value="4" style="margin-bottom: 5px;" checked id="checkbox2-4">
+							<label for="checkbox2-4">心力衰竭</label>
+							<div class="input-group" style="padding-left: 24px;border-bottom: 0;">
+								<label class="input-title">
+									NYHA心功能分级
+								</label>
+								<input id="age" type="text" class="mui-input-clear" placeholder="请输入等级">
+							</div>
+							<div class="time-group">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox2" value="5" id="checkbox2-5" />
+							<label for="checkbox2-5">风心病</label>
+							<div class="time-group">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="checkbox" class="input-checkbox" name="checkbox2" value="6" id="checkbox2-6" style="margin-bottom: 0px;">
+							<label for="checkbox2-6">其它</label>
+							<div class="input-group" style="padding-left: 24px;border-bottom: 0;">
+								<input id="age" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+							<div class="time-group">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.10 卒中风险评估
+						<div class="input-title">瓣膜性AF</div>
+						<div style="padding-right: 10px;padding-left: 24px;">
+							<div class="radio-group">
+								<input type="radio" name="radio1" value="1" id="" class="input-radio"><label>高危</label>
+								<input type="radio" name="radio1" value="2" id="" class="input-radio"><label>中危</label>
+								<input type="radio" name="radio1" value="3" id="" class="input-radio"><label>低危</label>
+							</div>
+							<div class="time-group" style="padding-left: 0px;">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title" style="margin-top: 0px;">非膜性AF</div>
+						<div class="checkbox-group" style="padding-left: 24px;border-bottom: 0;">
+							<div>
+								<input type="checkbox" class="input-checkbox" name="checkbox3" value="1" id="checkbox3-1"><label for="checkbox3-1">风心病</label>
+							</div>
+							<div class="time-group" style="padding-left: 0px;">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.11 出血风险评估
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox5" value="1" id="checkbox5-1">
+							<label for="checkbox5-1">高血压(H)1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox5" value="2" id="checkbox5-2">
+							<label for="checkbox5-2">肝功能异常1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="checkbox5" value="3" id="checkbox5-3">
+							<label for="checkbox5-3">肾功能异常1分</label>
+						</div>
+						<div class="input-group">
+							<label class="input-title">
+									填写时间
+							</label>
+							<div class="time-group" style="padding-left: 0px;">
+								<input type="text" disabled value="" id="" class="input-time" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<label class="input-title">
+									HAS-BLED评分
+								</label>
+							<input id="age" type="text" class="mui-input-clear" placeholder="请输入等级">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">2.13 既往复律情况
+						<div class="input-title">曾用过的转复方法 </div>
+						<div style="padding-right: 10px;padding-left: 24px;">
+							<div class="radio-group">
+								<input type="radio" name="radio3" value="1" id="" class="input-radio"><label>药物</label><br/>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-bottom: 2px;padding-left: 22px;">
+									<input id="age" type="text" class="mui-input-clear" placeholder="请输入药物名称">
+								</div>
+								<input type="radio" name="radio3" value="2" id="" class="input-radio"><label>电复律</label><br/>
+								<input type="radio" name="radio3" value="3" id="" class="input-radio"><label>未复律</label><br/>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell">
+						<div class="mui-input-group checkbox-group">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>checked：false</label>
+								<input name="checkbox" value="Item 1" type="checkbox">
+							</div>
+							<div class="mui-input-row mui-checkbox mui-left">
+								<label>checked：true</label>
+								<input name="checkbox" value="Item 2" type="checkbox" checked>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div>
+							<a href="#picture" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" style="padding: 5px 20px;">打开actionsheet</a>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">体检报告
+						<div class="upload-group" id="images-1">
+						</div>
+						<div class="file_upload_box">
+							<!--<input type='file' name='imgFile' id="imgFile" accept="image/*" capture="camera" multiple/>-->
+							<input type='file' id="file" accept="image/*" multiple/>
+							<img src="img/btn_tianjia.png" alt="" class="add-icon" />
+						</div>
+						<a id="login">login </a>
+						<a id="uploadImg"> 上传图片</a>
+					</li>
+				</ul>
+				<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="#">拍照或录像</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">选取现有的</a>
+						</li>
+					</ul>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="#picture"><b>取消</b></a>
+						</li>
+					</ul>
+				</div>
+			</form>
+			<input type="button" value="提交" onclick="getValue();" />
+		</div>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var images = [];
+
+			function showTimePicker(time) {}
+			(function($, doc) {
+				$.init();
+				//					initCamera();
+				doc.addEventListener('message', function(e) {
+					const message = e.data;
+					if(JSON.parse(message).type === 'SET') {
+						let formData = JSON.parse(message).formData;
+						document.getElementById('userName').value = JSON.parse(formData).userName;
+						document.getElementById('birthday').innerText = '1970-01-01';
+					} else if(JSON.parse(message).type === 'GET') {
+						submit()
+					}
+				})
+
+				var pickers = $('.timePicker');
+				pickers.each(function(i, picker) {
+					picker.addEventListener('click', function() {
+						timeChange(this)
+					}, false)
+				})
+
+				function timeChange(time) {
+					var year = new Date().getFullYear();
+					var options = {
+						"type": "date",
+						"value": time.value,
+						"beginYear": 1918,
+						"endYear": year
+					};
+					var optionsJson = time.getAttribute('data-options') || '{}';
+					var json = JSON.parse(optionsJson);
+					Object.assign(options, json);
+					console.log(options);
+					var id = time.getAttribute('id');
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						time.value = rs.text;
+						picker.dispose();
+					});
+				}
+				//-----------------------------------------
+				var cityPickers = $('.cityPicker');
+				cityPickers.each(function(i, picker) {
+					picker.addEventListener('tap', function() {
+						cityChange(this)
+					}, false)
+				})
+
+				function cityChange(city) {
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					cityPicker3.show(function(items) {
+						city.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+					});
+				}
+				//-----------------------------------------
+				var userPicker = new $.PopPicker();
+				userPicker.setData([{
+					value: 'ywj',
+					text: '董事长 叶文洁'
+				}, {
+					value: 'aaa',
+					text: '总经理 艾AA'
+				}, {
+					value: 'lj',
+					text: '罗辑'
+				}, {
+					value: 'ymt',
+					text: '云天明'
+				}]);
+				var showUserPicker = doc.getElementById('showUserPicker');
+				showUserPicker.addEventListener('click', function(event) {
+					userPicker.show(function(items) {
+						showUserPicker.innerText = items[0].text;
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+				//-----------------------------------------
+				doc.getElementById("login").addEventListener('click', function(e) {
+					alert($.ajax)
+					$.ajax({
+						url: 'https://health.eymj.com.cn/uh_health/account/login',
+						type: 'POST',
+						cache: false,
+						data: JSON.stringify({
+							telephone: '18252030586',
+							pwd: "123456",
+							clientId: '1'
+						}), //转JSON字符串    
+						dataType: 'json',
+						contentType: 'application/json', //contentType很重要    
+						//			             timeout: 5000,
+						//			             processData: false,
+						//			             xhrFields: {
+						//				             withCredentials: true
+						//			             },
+						success: function(data) {
+							alert('login success')
+							console.log(data);
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							alert(errorThrown)
+							console.log(errorThrown);
+						}
+					})
+				})
+
+				//------------------------------------------------------------------
+				doc.getElementById("file").addEventListener("change", function() {
+					console.log("change");
+					var files = $('#file')[0].files;
+					if(files.length > 0) {
+						var formData = new FormData();
+						formData.append('file', files[0]);
+						//							readURL(this);
+						uploadImage(formData);
+					}
+				});
+				var uploadImg = doc.getElementById("uploadImg");
+				uploadImg.addEventListener('click', function(e) {
+					// var path = doc.getElementById("imgFile").value;
+					// console.log(path);
+					var formData = new FormData();
+					console.log($('#file')[0].files[0]);
+					formData.append('file', $('#file')[0].files[0]);
+					uploadImage(formData);
+				})
+
+				function initCamera() {
+					//获取浏览器的userAgent,并转化为小写
+					var ua = navigator.userAgent.toLowerCase();
+					//判断是否是苹果手机，是则是true
+					var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+					if(isIos) {
+						//							alert('1')
+						$("input:file").removeAttr("capture");
+						//							alert('2')
+					};
+					//						alert('2')
+				}
+
+				function readURL(input) {
+					if(input.files && input.files[0]) {
+						var reader = new FileReader();
+						reader.onload = function(e) {
+							// doc.getElementById("blah").src = e.target.result;
+							var div = document.createElement("div");
+							var img = document.createElement("img");
+							img.src = e.target.result;
+							img.className = 'upload-img';
+							var delImg = document.createElement("img");
+							delImg.src = 'img/btn_tianjia.png';
+							delImg.className = 'upload-img-del'
+							div.appendChild(img);
+							div.appendChild(delImg);
+							doc.getElementById("images-1").appendChild(div)
+						}
+						reader.readAsDataURL(input.files[0]);
+					}
+				}
+
+				function compressPicture(blob) {
+					var quality = 0.8,
+						image = new Image();
+					image.src = blob;
+					image.onload = function() {
+						var that = this;
+						// 生成比例
+						var width = that.width,
+							height = that.height;
+						width = width / 4;
+						height = height / 4;
+						// 生成canvas画板
+						var canvas = document.createElement('canvas');
+						var ctx = canvas.getContext('2d');
+						canvas.width = width;
+						canvas.height = height;
+						ctx.drawImage(that, 0, 0, width, height);
+						// 生成base64,兼容修复移动设备需要引入mobileBUGFix.js
+						var imgurl = canvas.toDataURL('image/jpeg', quality);
+						// 修复IOS兼容问题
+						if(navigator.userAgent.match(/iphone/i)) {
+							var mpImg = new MegaPixImage(image);
+							mpImg.render(canvas, {
+								maxWidth: width,
+								maxHeight: height,
+								quality: quality
+							});
+							imgurl = canvas.toDataURL('image/jpeg', quality);
+						}
+						doc.getElementById("blah").src = imgurl;
+						// 上传照片
+						//							uploadImage();
+					};
+				};
+
+				function uploadImage(formData) {
+					$.ajax({
+						url: 'https://health.eymj.com.cn/uh_health/upload',
+						type: 'POST',
+						cache: false,
+						data: formData, //传递参数到服务器
+						processData: false, //因为data值是FormData对象，不需要对数据做处理,所以设为false
+						contentType: false,
+						xhrFields: {
+							withCredentials: true
+						},
+						success: function(data) {
+							alert('success');
+							if(data.result > 0) {
+								console.log(data.value);
+								alert(data.value);
+								//									images.push(data.value);
+							}
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							alert(textStatus)
+							console.log(data);
+						}
+					})
+
+				}
+
+			}(mui, document));
+
+			function sendData(data) {
+				if(window.originalPostMessage) {
+					window.postMessage(data);
+				} else {
+					throw Error('postMessage接口还未注入');
+				}
+			}
+
+			function submit() {
+				//					var userName = document.getElementById("userName").value;
+				//					var birthday = document.getElementById("birthday").innerText;
+				//					var sex = document.getElementById("sex").value;
+				//					var checkouts = document.getElementsByName("checkbox");
+				//					var checkbox = [];
+				//					for(let i = 0; i < checkouts.length; i++) {
+				//						if(checkouts[i].checked) {
+				//							checkbox.push(checkouts[i].value)
+				//						}
+				//					}
+				//					console.log(data)
+				//					var data = {
+				//						telephone,
+				//						userName,
+				//						sex,
+				//						birthday,
+				//						checkbox
+				//					}
+				var data = getValue();
+				sendData(JSON.stringify(data));
+			}
+
+			function getValue() {
+				console.log($("#form1").serialize());
+				var dataArray = $("#form2").serializeArray();
+				var data = {};
+				for(let i in dataArray) {
+					let name = dataArray[i].name;
+					let value = dataArray[i].value;
+					if(document.getElementsByName(name)[0].type === 'checkbox') {
+						if(data.hasOwnProperty(name)) {
+							data[name].push(value);
+						} else {
+							value = [value];
+							data[name] = value;
+						}
+					} else {
+						data[name] = value;
+					}
+
+				}
+				console.log(data);
+				return data;
+			}
+		</script>
+	</body>
+
+</html>

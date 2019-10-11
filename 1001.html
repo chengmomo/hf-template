@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>1001房颤中心模板</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/template.css" />
+		<!-- 通过 条件注释  让 这个js文件 在指定的 IE版本中 才被加载  -->
+		<!--[if lte IE 8]>
+        <script src='js/html5shiv.min.js'></script>
+        <![endif]-->
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form id="form1" name="form1">
+				<div class="title mui-content-padded">1 患者个人信息</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">患者姓名</div>
+							<div class="mui-input-row">
+								<input id="patientName" name="patientName" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">联系电话</div>
+							<div class="mui-input-row">
+								<input id="telephone" name="telephone" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">身份证号</div>
+							<div class="mui-input-row">
+								<input id="idNumber" name="idNumber" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">患者编号</div>
+							<div class="mui-input-row">
+								<input id="number" name="number" value="" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">患者类型</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="patientType" name="patientType">
+									<option value="1" selected>门诊</option>
+									<option value="2">住院</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">患者年龄</div>
+							<div class="mui-input-row">
+								<input id="age" name="age" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">性别</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="sex" name="sex">
+									<option value="1" selected>男</option>
+									<option value="2">女</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">出生日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" name="birth" id="birth" value="" data-options='{"type":"date","value":"1970-01-01"}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<!--<div class="input-group">
+						<div class="input-title">地区</div>
+						<div class="picker-group">
+							<input type="text" readonly name="city1" value="" id="" class="cityPicker" placeholder="请选择">
+							<img src="img/row_down.png" alt="" class="picker-icon" />
+						</div>
+					</div>-->
+						<div class="input-group">
+							<div class="input-title">身高(cm)</div>
+							<div class="mui-input-row">
+								<input id="height" name="height" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">体重(kg)</div>
+							<div class="mui-input-row">
+								<input id="weight" name="weight" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">2 诊断及风险评估</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-title">2.1 房颤类型（多选）</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="1" id="input1-1">
+							<label for="input1-1">新发房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="input2" id="input2" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="2" id="input1-2">
+							<label for="input1-2">阵发性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="input3" id="input3" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="3" id="input1-3">
+							<label for="input1-3">持续性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="input4" id="input4" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="4" id="input1-4">
+							<label for="input1-4">长期持续性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="input5" id="input5" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="5" id="input1-5">
+							<label for="input1-5">永久性房颤</label>
+							<div class="time-group">
+								<input type="text" readonly name="input6" id="input6" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="6" id="input1-6">
+							<label for="input1-6">无法判断类型AF</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="7" id="input1-7">
+							<label for="input1-7">典型房扑</label>
+							<div class="time-group">
+								<input type="text" readonly name="input7" id="input7" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input1" value="8" id="input1-8">
+							<label for="input1-8">非典型房扑</label>
+							<div class="time-group">
+								<input type="text" readonly name="input8" id="input8" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group" style="border-bottom: 0px;">
+							<input type="checkbox" class="input-checkbox" name="input1" value="9" id="input1-9">
+							<label for="input1-9">无法判断类型的房扑</label>
+							<div class="time-group">
+								<input type="text" readonly name="input9" id="input9" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.2 阵发性房颤填写</div>
+						<div class="input-group">
+							<div class="input-title">
+								发作频度（次/月）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input10" name="input10" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="input-title">
+								每次发作持续时间（小时）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input11" name="input11" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.3 持续性房颤填写</div>
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="input-title">
+								每次发作持续时间（小时）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input12" name="input12" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.4 永久性房颤填写</div>
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="input-title">
+								每次发作持续时间（小时）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input13" name="input13" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.5 房颤病史（月）</div>
+						<div class="input-group" style="border-bottom: 0px;">
+							<div class="mui-input-row">
+								<input type="text" id="input15" name="input15" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.6 基础疾病</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="1" id="input16-1">
+							<label for="input16-1">高血压</label>
+							<div class="time-group">
+								<input type="text" readonly name="input17" id="input17" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="2" id="input16-2">
+							<label for="input16-2">冠心病</label>
+							<div class="time-group">
+								<input type="text" readonly name="input18" id="input18" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="3" id="input16-3">
+							<label for="input16-3">风心病</label>
+							<div class="time-group">
+								<input type="text" readonly name="input19" id="input19" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="4" id="input16-4" style="margin-bottom: 5px;">
+							<label for="input16-4">心力衰竭</label>
+							<div>
+								<div class="input-group" style="padding-left: 24px;border-bottom: 0;">
+									<label class="input-title">
+									NYHA心功能分级
+								</label>
+									<input type="text" name="input20" id="input20" class="mui-input-clear" placeholder="请输入等级">
+								</div>
+								<div class="time-group">
+									<input type="text" readonly name="input21" id="input21" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="5" id="input16-5" />
+							<label for="input16-5">糖尿病</label>
+							<div class="time-group">
+								<input type="text" readonly name="input22" id="input22" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="6" id="input16-6" />
+							<label for="input16-6">脑卒中</label>
+							<div class="time-group">
+								<input type="text" readonly name="input23" id="input23" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="7" id="input16-7" />
+							<label for="input16-7">心脏外科手术后</label>
+							<div class="time-group">
+								<input type="text" readonly name="input24" id="input24" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="8" id="input16-8" />
+							<label for="input16-8">甲亢</label>
+							<div class="time-group">
+								<input type="text" readonly name="input25" id="input25" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="9" id="input16-9" />
+							<label for="input16-9">心肌病</label>
+							<div class="time-group">
+								<input type="text" readonly name="input26" id="input26" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input16" value="10" id="input16-10" />
+							<label for="input16-10">慢性阻塞性肺疾病</label>
+							<div class="time-group">
+								<input type="text" readonly name="input27" id="input27" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="checkbox" class="input-checkbox" name="input16" value="11" id="input16-11" style="margin-bottom: 0px;">
+							<label for="input16-11">其它</label>
+							<div>
+								<div class="input-group" style="padding-left: 24px;border-bottom: 0;">
+									<div class="mui-input-row">
+										<input type="text" name="input28" id="input28" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="time-group">
+									<input type="text" readonly name="input29" id="input29" value="" data-options='{}' class="input-time timePicker" placeholder="请选择首次确诊时间">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.7 合并心律失常</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input30" value="1" id="input30-1">
+							<label for="input30-1">房扑</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input30" value="2" id="input30-2">
+							<label for="input30-2">房速</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox" name="input30" value="3" id="input30-3">
+							<label for="input30-3">房早</label>
+						</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="checkbox" class="input-checkbox" name="input30" value="4" id="input30-4">
+							<label for="input30-4">其它</label>
+							<div class="input-group" style="padding-left: 24px;border-bottom: 0;">
+								<div class="mui-input-row">
+									<input type="text" name="input31" id="input31" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.8 心脏结构情况</div>
+						<div class="input-group">
+							<div class="input-title">
+								左房（mm）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input32" name="input32" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">
+								右房（mm）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input33" name="input33" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">
+								左室（mm）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input34" name="input34" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">
+								右室（mm）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input35" name="input35" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">
+								LEVF（%）
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input36" name="input36" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0">
+							<div class="time-group" style="padding-left: 0">
+								<div class="input-title">填写时间</div>
+								<input readonly type="text" id="input37" name="input37" value="" class="input-time edit-time" placeholder="自动生成">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.9 左房血栓</div>
+						<div class="radio-group">
+							<input type="radio" name="input38" value="1" id="" class="input-radio display-radio"><label>无</label>
+							<input type="radio" name="input38" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input39" value="1" id="input39-1">
+								<label for="input39-1">TEE</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input39" value="2" id="input39-2">
+								<label for="input39-2">TTE</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input39" value="3" id="input39-3">
+								<label for="input39-3">MSCT</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input39" value="4" id="input39-4">
+								<label for="input39-4">MRI</label>
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0">
+							<div class="time-group" style="padding-left: 0;">
+								<div class="input-title">填写时间</div>
+								<input readonly type="text" id="input40" name="input40" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-bottom: 5px;">
+						<div class="input-title">2.10 卒中风险评估</div>
+						<div class="input-title">瓣膜性AF</div>
+						<div style="padding-left: 20px">
+							<div class="radio-group">
+								<input type="radio" name="input41" value="1" id="" class="input-radio"><label>高危</label>
+								<input type="radio" name="input41" value="2" id="" class="input-radio"><label>中危</label>
+								<input type="radio" name="input41" value="3" id="" class="input-radio"><label>低危</label>
+							</div>
+							<div class="input-group" style="border-bottom: 0">
+								<div class="time-group" style="padding-left: 0;">
+									<div class="input-title">填写时间</div>
+									<input readonly type="text" id="input42" name="input42" value="" class="input-time edit-time" placeholder="自动生成">
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title" style="margin-top: 0px;">非膜性AF</div>
+						<div style="padding-left: 20px">
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="1" id="input43-1" num="1" inputId="input45">
+								<label for="input43-1">充血性心力衰竭/左心室功能障碍(C)1分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="2" id="input43-2" num="1" inputId="input45">
+								<label for="input43-2">高血压(H)1分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="3" id="input43-3" num="2" inputId="input45">
+								<label for="input43-3">年龄≥75岁(A)2分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="4" id="input43-4" num="1" inputId="input45">
+								<label for="input43-4">糖尿病(D)1分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="5" id="input43-5" num="2" inputId="input45">
+								<label for="input43-5">脑卒中/TIA/血栓栓塞病史(S)2分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="6" id="input43-6" num="1" inputId="input45">
+								<label for="input43-6">血管疾病(V)1分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="7" id="input43-7" num="1" inputId="input45">
+								<label for="input43-7">年龄65~74岁(A)1分</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox num-checkbox" name="input43" value="8" id="input43-8" num="1" inputId="input45">
+								<label for="input43-8">性别(女性)(Sc)1分</label>
+							</div>
+							<div class="input-group">
+								<div class="time-group" style="padding-left: 0">
+									<div class="input-title">填写时间</div>
+									<input readonly type="text" id="input44" name="input44" value="" class="input-time edit-time" placeholder="自动生成">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0px;">
+								<div class="input-title">CHA₂DS₂-VASc评分</div>
+								<input readonly type="text" id="input45" name="input45" class="mui-input-clear" placeholder="0" value="0">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.11 出血风险评估</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="1" id="input46-1" num="1" inputId="input48">
+							<label for="input46-1">高血压(H)1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="2" id="input46-2" num="1" inputId="input48">
+							<label for="input46-2">肝功能异常1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="3" id="input46-3" num="1" inputId="input48">
+							<label for="input46-3">肾功能异常1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="4" id="input46-4" num="1" inputId="input48">
+							<label for="input46-4">脑卒中(S)1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="5" id="input46-5" num="1" inputId="input48">
+							<label for="input46-5">出血(B)1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="6" id="input46-6" num="1" inputId="input48">
+							<label for="input46-6">INR值易波动(L)1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="7" id="input46-7" num="1" inputId="input48">
+							<label for="input46-7">老年人(如年龄>65岁)(E)1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="8" id="input46-8" num="1" inputId="input48">
+							<label for="input46-8">药物1分</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input46" value="9" id="input46-9" num="1" inputId="input48">
+							<label for="input46-9">嗜酒1分</label>
+						</div>
+						<div class="input-group">
+							<div class="time-group" style="padding-left: 0;">
+								<div class="input-title">填写时间</div>
+								<input readonly type="text" id="input47" name="input47" value="" class="input-time edit-time" placeholder="自动生成">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">HAS-BLED评分</div>
+							<input readonly type="text" id="input48" name="input48" class="mui-input-clear" placeholder="0" value="0">
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.12 肾功能评估</div>
+						<div class="input-group">
+							<div class="input-title">
+								内生肌酐清除率
+							</div>
+							<div class="mui-input-row">
+								<input type="text" id="input49" name="input49" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="time-group" style="padding-left: 0;">
+								<div class="input-title">填写时间</div>
+								<input readonly type="text" id="input50" name="input50" value="" class="input-time edit-time" placeholder="自动生成">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.13 既往复律情况</div>
+						<div class="input-title">曾用过的转复方法 </div>
+						<div style="padding-left: 20px">
+							<div class="radio-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="radio" name="input51" value="1" class="input-radio item-radio"><label>药物</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-bottom: 2px;padding-left: 20px;">
+									<div class="mui-input-row">
+										<input type="text" id="input52" name="input52" class="mui-input-clear" placeholder="请输入药物名称">
+									</div>
+								</div>
+							</div>
+							<div class="radio-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="radio" name="input51" value="2" class="input-radio item-radio"><label>电复律</label>
+							</div>
+							<div class="radio-group" style="border-bottom: 0;">
+								<input type="radio" name="input51" value="3" class="input-radio item-radio"><label>未复律</label>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">3 综合治疗</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.1 心率控制</div>
+						<div class="input-title">药物</div>
+						<div style="padding-left: 20px">
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input53" value="1" id="input53-1">
+								<label for="input53-1">胺碘酮</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input53" value="2" id="input53-2">
+								<label for="input53-2">索他洛尔</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input53" value="3" id="input53-3">
+								<label for="input53-3">β-受体阻滞剂</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input53" value="4" id="input53-4">
+								<label for="input53-4">心律平</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input53" value="5" id="input53-5">
+								<label for="input53-5">地高辛</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input53" value="6" id="input53-6">
+								<label for="input53-6">莫雷西嗪</label>
+							</div>
+							<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="checkbox" class="input-checkbox" name="input53" value="7" id="input53-7">
+								<label for="input53-7">其它</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+									<div class="mui-input-row">
+										<input type="text" id="input54" name="input54" class="mui-input-clear" placeholder="请输入药物名称">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title" style="margin-top: 0px;">房室结消融+起博</div>
+						<div style="padding-left: 20px">
+							<div class="input-group">
+								<div class="input-title">手术时间</div>
+								<div class="time-group" style="padding-left: 0;">
+									<input readonly type="text" id="input55" name="input55" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="input-title">起搏器类型</div>
+								<div class="mui-input-row">
+									<input type="text" id="input56" name="input56" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="input-title">公司</div>
+								<div class="mui-input-row">
+									<input type="text" id="input57" name="input57" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0px;">
+								<div class="input-title">型号</div>
+								<div class="mui-input-row">
+									<input type="text" id="input58" name="input58" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell">
+						<div class="input-title">3.2 节律控制</div>
+						<div class="input-title">药物复律</div>
+						<div style="padding-left: 20px">
+							<div class="input-group">
+								<div class="input-title">名称</div>
+								<div class="mui-input-row">
+									<input type="text" id="input59" name="input59" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0;">
+								<div class="input-title">时间</div>
+								<div class="time-group" style="padding-left: 0;">
+									<input readonly type="text" id="input60" name="input60" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title" style="margin-top: 0px;">电复律</div>
+						<div style="padding-left: 20px">
+							<div class="input-group" style="border-bottom: 0;">
+								<div class="input-title">时间</div>
+								<div class="time-group" style="padding-left: 0;">
+									<input readonly type="text" id="input61" name="input61" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title" style="margin-top: 0px;">长期节律控制药物</div>
+						<div class="input-item" style="border-bottom: 0;">
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input62" value="1" id="input62-1">
+								<label for="input62-1">胺碘酮</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input62" value="2" id="input62-2">
+								<label for="input62-2">索他洛尔</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input62" value="3" id="input62-3">
+								<label for="input62-3">β-受体阻滞剂</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input62" value="4" id="input62-4">
+								<label for="input62-4">心律平</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input62" value="5" id="input62-5">
+								<label for="input62-5">地高辛</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input62" value="6" id="input62-6">
+								<label for="input62-6">莫雷西嗪</label>
+							</div>
+							<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="checkbox" class="input-checkbox" name="input62" value="7" id="input62-7">
+								<label for="input62-7">其它</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+									<div class="mui-input-row">
+										<input type="text" id="input63" name="input63" class="mui-input-clear" placeholder="请输入药物名称">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.3 抗栓</div>
+						<div class="input-title">药物</div>
+						<div class="input-item" style="border-bottom: 0;">
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input64" value="1" id="input64-1">
+								<label for="input64-1">利伐沙班</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input64" value="2" id="input64-2">
+								<label for="input64-2">达比加群</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input64" value="3" id="input64-3">
+								<label for="input64-3">抗血小板药物</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="input64" value="4" id="input64-4">
+								<label for="input64-4">华法林</label>
+								<div class="input-group item-child">
+									<input type="text" id="input65" name="input65" class="mui-input-clear" placeholder="请输入INR数值">
+								</div>
+							</div>
+							<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="checkbox" class="input-checkbox" name="input64" value="5" id="input64-5">
+								<label for="input64-5">其它</label>
+								<div class="input-group item-child">
+									<div class="mui-input-row">
+										<input type="text" id="input66" name="input66" class="mui-input-clear" placeholder="请输入药物名称">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<form id="FORM_A">
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.4 导管消融</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="A_DISPLAY" value="1" id="" class="input-radio display-radio"><label>无&emsp;</label>
+							<input type="radio" name="A_DISPLAY" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+								<div class="picker-group" style="padding-left: 0;">
+									<select name="A_TYPE" id="A_TYPE" class="SELECT_TYPE">
+										<option value="1">第一次导管消融</option>
+										<option value="2">第二次导管消融</option>
+										<option value="3">第三次导管消融</option>
+										<option value="4">第四次导管消融</option>
+									</select>
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+							<div class="input-title">1、消融次数及时间</div>
+							<div class="input-item">
+								<div class="input-group">
+									<div class="input-title">第1次消融时间</div>
+									<div class="time-group" style="padding-left: 0;">
+										<input readonly type="text" id="a1" name="a1" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+										<img src="img/row_down.png" alt="" class="picker-icon" />
+									</div>
+								</div>
+								<div class="radio-group" style="border-bottom: 0">
+									<label class="input-title">麻醉方式</label>
+									<input type="radio" name="a2" value="1" id="" class="input-radio display-radio"><label>全身麻醉&emsp;</label>
+									<input type="radio" name="a2" value="2" id="" class="input-radio display-radio"><label>局部麻醉</label>
+								</div>
+							</div>
+							<div class="input-title">2、消融术式</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a3" value="1" id="a3-1">
+									<label for="a3-1">局灶消融</label>
+								</div>
+								<div class="checkbox-group" style="padding-right: 0;">
+									<input type="checkbox" class="input-checkbox" name="a3" value="2" id="a3-2">
+									<label for="a3-2">节段性肺静脉消融(SPVI)</label>
+									<div class="input-item" style="border-bottom: 0;">
+										<div class="input-title">消融靶静脉</div>
+										<div class="checkbox-group">
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="1" id="a4-1">
+												<label for="a4-1">RSPV</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="2" id="a4-2">
+												<label for="a4-2">RIPV</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="3" id="a4-3">
+												<label for="a4-3">RPVs</label>
+											</div>
+										</div>
+										<div class="checkbox-group">
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="4" id="a4-4">
+												<label for="a4-4">LSPV</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="5" id="a4-5">
+												<label for="a4-5">LIPV</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="6" id="a4-6">
+												<label for="a4-6">SVC</label>
+											</div>
+										</div>
+										<div class="checkbox-group">
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="7" id="a4-7">
+												<label for="a4-7">IVC</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="8" id="a4-8">
+												<label for="a4-8">CSOs</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a4" value="9" id="a4-9">
+												<label for="a4-9">PV共干</label>
+											</div>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a4" value="10" id="a4-10">
+											<label for="a4-10">其它</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+												<div class="mui-input-row">
+													<input type="text" id="a5" name="a5" class="mui-input-clear" placeholder="请填写">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="padding-right: 0;">
+									<input type="checkbox" class="input-checkbox" name="a3" value="3" id="a3-3">
+									<label for="a3-3">环肺静脉消融(CAPV)</label>
+									<div class="input-item" style="border-bottom: 0;">
+										<div class="input-title">心房消融径线</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a6" value="1" id="a6-1">
+											<label for="a6-1">左房峡部</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a6" value="2" id="a6-2">
+											<label for="a6-2">左房顶部</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a6" value="3" id="a6-3">
+											<label for="a6-3">右房峡部</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a6" value="4" id="a6-4">
+											<label for="a6-4">左右肺静脉消融环间</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a6" value="5" id="a6-5">
+											<label for="a6-5">其它</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+												<div class="mui-input-row">
+													<input type="text" id="a7" name="a7" class="mui-input-clear" placeholder="请填写">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="padding-right: 0;">
+									<input type="checkbox" class="input-checkbox" name="a3" value="4" id="a3-4">
+									<label for="a3-4">环肺静脉+必要辅助线</label>
+									<div class="input-item" style="border-bottom: 0;">
+										<div class="input-title">心房消融径线</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a8" value="1" id="a8-1">
+											<label for="a8-1">左房峡部</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a8" value="2" id="a8-2">
+											<label for="a8-2">左房顶部</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a8" value="3" id="a8-3">
+											<label for="a8-3">右房峡部</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a8" value="4" id="a8-4">
+											<label for="a8-4">左右肺静脉消融环间</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a8" value="5" id="a8-5">
+											<label for="a8-5">其它</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+												<div class="mui-input-row">
+													<input type="text" id="a9" name="a9" class="mui-input-clear" placeholder="请填写">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="padding-right: 0;">
+									<input type="checkbox" class="input-checkbox" name="a3" value="5" id="a3-5">
+									<label for="a3-5">碎裂电位消融(CEAEs)</label>
+								</div>
+								<div class="checkbox-group" style="padding-right: 0;">
+									<input type="checkbox" class="input-checkbox" name="a3" value="6" id="a3-6">
+									<label for="a3-6">神经节丛消融</label>
+									<div style="padding-left: 20px;">
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a10" value="1" id="a10-1">
+											<label for="a10-1">术中消融出现迷走神经反射区域</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a10" value="2" id="a10-2">
+											<label for="a10-2">左上</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a10" value="3" id="a10-3">
+											<label for="a10-3">左下</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a10" value="4" id="a10-4">
+											<label for="a10-4">右前</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a10" value="5" id="a10-5">
+											<label for="a10-5">右下</label>
+										</div>
+										<div class="checkbox-group">
+											<input type="checkbox" class="input-checkbox" name="a10" value="6" id="a10-6">
+											<label for="a10-6">高频刺激寻找并消融神经节丛</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0">
+											<input type="checkbox" class="input-checkbox" name="a10" value="7" id="a10-7">
+											<label for="a10-7">其它</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+												<div class="mui-input-row">
+													<input type="text" id="a11" name="a11" class="mui-input-clear" placeholder="请填写">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="padding-right: 0;border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a3" value="7" id="a3-7">
+									<label for="a3-7">stepwise ablation</label>
+									<div style="padding-left: 20px;">
+										<div class="input-title">第一步</div>
+										<div class="checkbox-group">
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a12" value="1" id="a12-1">
+												<label for="a12-1">CAPV</label>
+											</div>
+											<div class="checkbox-item">
+												<input type="checkbox" class="input-checkbox" name="a12" value="2" id="a12-2">
+												<label for="a12-2">SPVI</label>
+											</div>
+											<div class="radio-group" style="border-bottom: 0;">
+												<label class="input-title">是否成功</label>
+												<input type="radio" name="a13" value="1" id="" class="input-radio"><label>是&emsp;</label>
+												<input type="radio" name="a13" value="2" id="" class="input-radio"><label>否</label>
+											</div>
+										</div>
+										<div class="input-title">第二步 辅助径线</div>
+										<div class="checkbox-group" style="border-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a14" value="1" id="a14-1">
+											<label for="a14-1">左房峡部</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a14" value="2" id="a14-2">
+											<label for="a14-2">左房顶部</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a14" value="3" id="a14-3">
+											<label for="a14-3">右房峡部</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a14" value="4" id="a14-4">
+											<label for="a14-4">左右肺静脉消融环间</label>
+										</div>
+										<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+											<input type="checkbox" class="input-checkbox" name="a14" value="5" id="a14-5">
+											<label for="a14-5">其它</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+												<div class="mui-input-row">
+													<input type="text" id="a15" name="a15" class="mui-input-clear" placeholder="请填写">
+												</div>
+											</div>
+										</div>
+										<div class="radio-group">
+											<label class="input-title">是否成功</label>
+											<input type="radio" name="a16" value="1" id="" class="input-radio"><label>是&emsp;</label>
+											<input type="radio" name="a16" value="2" id="" class="input-radio"><label>否</label>
+										</div>
+										<div class="input-title">第三步</div>
+										<div class="radio-group" style="border-bottom: 0;">
+											<label class="input-title">CFAEs</label>
+											<input type="radio" name="a17" value="1" id="" class="input-radio"><label>是&emsp;</label>
+											<input type="radio" name="a17" value="2" id="" class="input-radio"><label>否</label>
+										</div>
+										<div class="radio-group">
+											<label class="input-title">是否成功</label>
+											<input type="radio" name="a18" value="1" id="" class="input-radio"><label>是&emsp;</label>
+											<input type="radio" name="a18" value="2" id="" class="input-radio"><label>否</label>
+										</div>
+										<div class="input-title">第四步</div>
+										<div class="checkbox-group" style="border-bottom: 0">
+											<input type="checkbox" class="input-checkbox" name="a19" value="1" id="a19-1">
+											<label for="a19-1">其它</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+												<div class="mui-input-row">
+													<input type="text" id="a20" name="a20" class="mui-input-clear" placeholder="请填写">
+												</div>
+											</div>
+											<div class="radio-group" style="border-bottom: 0">
+												<label class="input-title">是否成功</label>
+												<input type="radio" name="a21" value="1" id="" class="input-radio"><label>是&emsp;</label>
+												<input type="radio" name="a21" value="2" id="" class="input-radio"><label>否</label>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="input-title">3、其他局灶性靶区</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="1" id="a22-1">
+									<label for="a22-1">右房间隔部</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="2" id="a22-2">
+									<label for="a22-2">右房游离壁</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="3" id="a22-3">
+									<label for="a22-3">左心耳</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="4" id="a22-4">
+									<label for="a22-4">左房前壁</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="5" id="a22-5">
+									<label for="a22-5">左房后壁</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="6" id="a22-6">
+									<label for="a22-6">冠状窦顶端</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="7" id="a22-7">
+									<label for="a22-7">冠状窦中段</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="8" id="a22-8">
+									<label for="a22-8">冠状窦口部</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="9" id="a22-9">
+									<label for="a22-9">Marshall韧带</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a22" value="10" id="a22-10">
+									<label for="a22-10">界嵴</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a22" value="11" id="a22-11">
+									<label for="a22-11">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="a23" name="a23" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">4、标测方式/系统</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a24" value="1" id="a24-1">
+									<label for="a24-1">Lasso</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a24" value="2" id="a24-2">
+									<label for="a24-2">CARTO</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a24" value="3" id="a24-3">
+									<label for="a24-3">EnSite</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a24" value="4" id="a24-4">
+									<label for="a24-4">CT Merge</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a24" value="5" id="a24-5">
+									<label for="a24-5">MRI Merge</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a24" value="6" id="a24-6">
+									<label for="a24-6">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="a25" name="a25" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">5、消融能源</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a26" value="1" id="a26-1">
+									<label for="a26-1">射频</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a26" value="2" id="a26-2">
+									<label for="a26-2">非压力导管</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a26" value="3" id="a26-3">
+									<label for="a26-3">压力导管</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a26" value="4" id="a26-4">
+									<label for="a26-4">冷冻</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a26" value="5" id="a26-5">
+									<label for="a26-5">一代球囊</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a26" value="6" id="a26-6">
+									<label for="a26-6">二代球囊</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a26" value="7" id="a26-7">
+									<label for="a26-7">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="a27" name="a27" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">6、消融终点</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a28" value="1" id="a28-1">
+									<label for="a28-1">完成消融径线</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a28" value="2" id="a28-2">
+									<label for="a28-2">肺静脉电位消失</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a28" value="3" id="a28-3">
+									<label for="a28-3">肺静脉-左心房双向传导阻滞</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a28" value="4" id="a28-4">
+									<label for="a28-4">房颤不能诱发</label>
+								</div>
+							</div>
+							<div class="input-title">7、放电时间（分钟）</div>
+							<div class="input-item">
+								<div class="input-group" style="margin-top: 0;border-bottom: 0">
+									<div class="mui-input-row">
+										<input type="text" id="a29" name="a29" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+							<div class="input-title">8、X线曝光时间</div>
+							<div class="input-item">
+								<div class="input-group" style="margin-top: 0;">
+									<div class="input-title">时间（分钟）</div>
+									<div class="mui-input-row">
+										<input type="text" id="a30" name="a30" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group" style="margin-bottom: 8px;border-bottom: 0">
+									<div class="input-title">X射线量</div>
+									<div class="mui-input-row">
+										<input type="text" id="a31" name="a31" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+							<div class="input-title">9、迷走反射</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0">
+									<input type="radio" name="a32" value="1" id="" class="input-radio"><label>有&emsp;</label>
+									<input type="radio" name="a32" value="2" id="" class="input-radio"><label>无</label>
+								</div>
+							</div>
+							<div class="input-title">10、术中电复律</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0">
+									<input type="radio" name="a33" value="1" id="" class="input-radio"><label>有&emsp;</label>
+									<input type="radio" name="a33" value="2" id="" class="input-radio"><label>无</label>
+								</div>
+							</div>
+							<div class="input-title">11、消融前心律</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a34" value="1" id="a34-1">
+									<label for="a34-1">窦性心律</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a34" value="2" id="a34-2">
+									<label for="a34-2">房早</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a34" value="3" id="a34-3">
+									<label for="a34-3">房速</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a34" value="4" id="a34-4">
+									<label for="a34-4">房扑</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a34" value="5" id="a34-5">
+									<label for="a34-5">房颤</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a34" value="6" id="a34-6">
+									<label for="a34-6">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="a35" name="a35" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">12、术终心律</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a36" value="1" id="a36-1">
+									<label for="a36-1">窦性心律</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a36" value="2" id="a36-2">
+									<label for="a36-2">房早</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a36" value="3" id="a36-3">
+									<label for="a36-3">房速</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a36" value="4" id="a36-4">
+									<label for="a36-4">房扑</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a36" value="5" id="a36-5">
+									<label for="a36-5">房颤</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a36" value="6" id="a36-6">
+									<label for="a36-6">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="a37" name="a37" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">13、术中并发症</div>
+							<div class="input-item" style="border-bottom: 0;">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a38" value="1" id="a38-1">
+									<label for="a38-1">心包压塞</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a38" value="2" id="a38-2">
+									<label for="a38-2">肺静脉狭窄</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a38" value="3" id="a38-3">
+									<label for="a38-3">血栓栓塞</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a38" value="4" id="a38-4">
+									<label for="a38-4">皮下血肿</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="a38" value="5" id="a38-5">
+									<label for="a38-5">食管心房瘘</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="a38" value="6" id="a38-6">
+									<label for="a38-6">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="a39" name="a39" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<form id="FORM_B">
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.5 左心耳封堵术</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="B_DISPLAY" value="1" id="" class="input-radio display-radio"><label>无&emsp;</label>
+							<input type="radio" name="B_DISPLAY" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+								<div class="picker-group" style="padding-left: 0;">
+									<select id="B_TYPE" name="B_TYPE">
+										<option value="1">第一次左心耳封堵术</option>
+										<option value="2">第二次左心耳封堵术</option>
+									</select>
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+							<div class="input-title">1、左心耳结构</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;padding-bottom: 5px;">
+									<input type="radio" name="b1" value="1" id="" class="input-radio"><label>单叶&emsp;</label>
+									<input type="radio" name="b1" value="2" id="" class="input-radio"><label>双叶&emsp;</label>
+									<input type="radio" name="b1" value="2" id="" class="input-radio"><label>多叶</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="b2" value="1" id="b2-1">
+									<label for="b2-1">左心耳深度（mm）</label>
+									<div class="input-group item-child">
+										<div class="mui-input-row">
+											<input type="text" id="b3" name="b3" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="b2" value="2" id="b2-2">
+									<label for="b2-2">左心耳口部直径（mm）</label>
+									<div class="input-group item-child">
+										<div class="mui-input-row">
+											<input type="text" id="b4" name="b4" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;padding-bottom: 14px;">
+									<input type="checkbox" class="input-checkbox" name="b2" value="3" id="b2-3">
+									<label for="b2-3">左心耳封堵器锚定区直径（mm）</label>
+									<div class="input-group item-child">
+										<div class="mui-input-row">
+											<input type="text" id="b5" name="b5" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">2、手术日期及器械</div>
+							<div class="input-item">
+								<div class="input-group">
+									<div class="time-group" style="padding-left: 0;">
+										<div class="input-title">日期</div>
+										<input readonly type="text" id="b6" name="b6" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+										<img src="img/row_down.png" alt="" class="picker-icon" />
+									</div>
+								</div>
+								<div class="radio-group">
+									<label class="input-title">封堵器植入成功植入</label>
+									<input type="radio" name="b7" value="1" id="" class="input-radio"><label>是&emsp;</label>
+									<input type="radio" name="b7" value="2" id="" class="input-radio"><label>否</label>
+								</div>
+								<div class="radio-group">
+									<label class="input-title">左心耳是否达到封堵成功标准</label>
+									<input type="radio" name="b8" value="1" id="" class="input-radio"><label>是&emsp;</label>
+									<input type="radio" name="b8" value="2" id="" class="input-radio"><label>否</label>
+								</div>
+								<div class="input-title">封堵器类型</div>
+								<div class="input-item">
+									<div class="checkbox-group" style="border-bottom: 0;">
+										<div class="checkbox-item">
+											<input type="checkbox" class="input-checkbox" name="b9" value="1" id="b9-1">
+											<label for="b9-1">Watchman&emsp;</label>
+										</div>
+										<div class="checkbox-item">
+											<input type="checkbox" class="input-checkbox" name="b9" value="2" id="b9-2">
+											<label for="b9-2">ACP&emsp;</label>
+										</div>
+									</div>
+									<div class="checkbox-group" style="border-bottom: 0;">
+										<div class="checkbox-item">
+											<input type="checkbox" class="input-checkbox" name="b9" value="3" id="b9-3">
+											<label for="b9-3">LAmbre&emsp;</label>
+										</div>
+										<div class="checkbox-item">
+											<input type="checkbox" class="input-checkbox" name="b9" value="4" id="b9-4">
+											<label for="b9-4">Lefort</label>
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="">
+									<input type="checkbox" class="input-checkbox" name="b10" value="1" id="b10-1">
+									<label for="b10-1">其它</label>
+									<div class="input-group item-child">
+										<div class="mui-input-row">
+											<input type="text" id="b11" name="b11" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="b10" value="2" id="b10-2">
+									<label for="b10-2">型号（mm）</label>
+									<div class="input-group item-child">
+										<div class="mui-input-row">
+											<input type="text" id="b12" name="b12" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">3、手术参数</div>
+							<div class="input-item">
+								<div class="input-group">
+									<div class="input-title">输送鞘直径(mm)</div>
+									<div class="mui-input-row">
+										<input type="text" id="b13" name="b13" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="input-title">封堵器释放次数</div>
+									<div class="mui-input-row">
+										<input type="text" id="b14" name="b14" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="radio-group">
+									<label class="input-title">是否更换封堵器</label>
+									<input type="radio" name="b15" value="1" id="" class="input-radio"><label>是&emsp;</label>
+									<input type="radio" name="b15" value="2" id="" class="input-radio"><label>否</label>
+								</div>
+								<div class="radio-group">
+									<label class="input-title">有无残余分流</label>
+									<input type="radio" name="b16" value="1" id="" class="input-radio"><label>有&emsp;</label>
+									<input type="radio" name="b16" value="2" id="" class="input-radio"><label>无</label>
+								</div>
+								<div class="input-group">
+									<div class="input-title">手术时间(min)</div>
+									<div class="mui-input-row">
+										<input type="text" id="b17" name="b17" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="input-title">左房压力(mmHg:非必填)</div>
+									<div class="mui-input-row">
+										<input type="text" id="b18" name="b18" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="input-title">封堵器压缩比(%:非必填)</div>
+									<div class="mui-input-row">
+										<input type="text" id="b19" name="b19" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="input-title">ACT(S:非必填)</div>
+									<div class="mui-input-row">
+										<input type="text" id="b20" name="b20" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group" style="border-bottom: 0;">
+									<div class="input-title">封堵器距二尖瓣距离(mm:非必填)</div>
+									<div class="mui-input-row">
+										<input type="text" id="b21" name="b21" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+
+							</div>
+							<div class="input-title">4、手术并发症</div>
+							<div class="input-item" style="border-bottom: 0;">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="1" id="b22-1">
+									<label for="b22-1">未干预的少量心包积液</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="2" id="b22-2">
+									<label for="b22-2">心脏压塞&emsp;</label>
+									<div class="radio-group" style="border-bottom: 0;padding-left: 20px;padding-bottom: 2px;">
+										<input type="radio" name="b23" value="1" id="" class="input-radio"><label>外科手术处理&emsp;</label>
+										<input type="radio" name="b23" value="2" id="" class="input-radio"><label>穿刺引流处理</label>
+									</div>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="3" id="b22-3">
+									<label for="b22-3">血栓栓塞</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="4" id="b22-4">
+									<label for="b22-4">严重出血(输血或手术处理)</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="5" id="b22-5">
+									<label for="b22-5">穿刺部位血肿</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="6" id="b22-6">
+									<label for="b22-6">动静脉瘘</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="b22" value="7" id="b22-7">
+									<label for="b22-7">假性动脉瘤</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="b22" value="8" id="b22-8">
+									<label for="b22-8">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="b24" name="b24" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<form id="form2">
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.6 外科左心耳微创治疗</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="input67" value="1" id="" class="input-radio display-radio"><label>无&emsp;</label>
+							<input type="radio" name="input67" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="input-group">
+								<div class="input-title">手术名称</div>
+								<div class="mui-input-row">
+									<input type="text" id="input68" name="input68" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0px;">
+								<div class="input-title">时间</div>
+								<div class="time-group" style="padding-left: 0;">
+									<input readonly type="text" id="input69" name="input69" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.7 卒中</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="input70" value="1" id="" class="input-radio display-radio"><label>无&emsp;</label>
+							<input type="radio" name="input70" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="input-group" style="border-bottom: 0;">
+								<div class="input-title">部位</div>
+								<div class="mui-input-row">
+									<input type="text" id="input71" name="input71" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+						</div>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.8 内脏器官栓塞</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="input72" value="1" id="" class="input-radio display-radio"><label>无&emsp;</label>
+							<input type="radio" name="input72" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="input-group">
+								<div class="input-title">手术名称</div>
+								<div class="mui-input-row">
+									<input type="text" id="input73" name="input73" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0px;">
+								<div class="input-title">时间</div>
+								<div class="time-group" style="padding-left: 0;">
+									<input readonly type="text" id="input74" name="input74" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.9 外周动脉栓塞</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="input75" value="1" id="" class="input-radio display-radio"><label>无&emsp;</label>
+							<input type="radio" name="input75" value="2" id="" class="input-radio display-radio"><label>有</label>
+						</div>
+						<div>
+							<div class="input-group">
+								<div class="input-title">手术名称</div>
+								<div class="mui-input-row">
+									<input type="text" id="input76" name="input76" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0px;">
+								<div class="input-title">时间</div>
+								<div class="time-group" style="padding-left: 0;">
+									<input readonly type="text" id="input77" name="input77" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+						</div>
+				</ul>
+			</form>
+			<div class="title mui-content-padded">4 介入手术后随访</div>
+			<form id="FORM_C">
+				<div id="rhythm_control">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell" style="padding-right: 0px;">
+							<div class="input-title">4.1 心率控制射频消融手术后随访</div>
+							<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+								<div class="picker-group" style="padding-left: 0;">
+									<select id="C_TYPE" name="C_TYPE">
+										<option value="1">4.1.1第一次术后3个月</option>
+										<option value="2">4.1.2第一次术后6个月</option>
+										<option value="3">4.1.3第一次术后12个月</option>
+										<option value="4">4.1.4第一次术后18个月</option>
+										<option value="5">4.1.5第一次术后24个月</option>
+										<option value="6">4.1.6第一次术后30个月</option>
+										<option value="7">4.1.7第一次术后36个月</option>
+										<option value="8">4.1.8第一次术后42个月</option>
+										<option value="9">4.1.9第一次术后48个月</option>
+										<option value="10">4.1.10第一次术后54个月</option>
+										<option value="11">4.1.11第一次术后60个月</option>
+										<option value="12">4.1.12第一次术后66个月</option>
+										<option value="13">4.1.13第一次术后72个月</option>
+									</select>
+									<img src="img/row_down.png" alt="" class="picker-icon" />
+								</div>
+							</div>
+							<div class="input-title">1、心律状态</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="1" id="c1-1">
+										<label for="c1-1">窦律&emsp;</label>
+									</div>
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="2" id="c1-2">
+										<label for="c1-2">房颤&emsp;</label>
+									</div>
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="3" id="c1-3">
+										<label for="c1-3">房速&emsp;</label>
+									</div>
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="4" id="c1-4">
+										<label for="c1-4">房扑</label>
+									</div>
+								</div>
+								<div class="checkbox-group">
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="5" id="c1-5">
+										<label for="c1-5">频发房早&emsp;</label>
+									</div>
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="6" id="c1-6">
+										<label for="c1-6">室早&emsp;</label>
+									</div>
+									<div class="checkbox-item">
+										<input type="checkbox" class="input-checkbox" name="c1" value="7" id="c1-7">
+										<label for="c1-7">窦缓</label>
+									</div>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="c1" value="8" id="c1-8">
+									<label for="c1-8">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="c2" name="c2" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">2、房颤症状分级</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c3" value="1" id="" class="input-radio"><label>Ⅰ级&emsp;</label>
+									<input type="radio" name="c3" value="2" id="" class="input-radio"><label>Ⅱ级&emsp;</label>
+									<input type="radio" name="c3" value="3" id="" class="input-radio"><label>Ⅲ级&emsp;</label>
+									<input type="radio" name="c3" value="4" id="" class="input-radio"><label>Ⅳ级</label>
+								</div>
+							</div>
+							<div class="input-title">3、NYHA心功能分级</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c4" value="1" id="" class="input-radio"><label>Ⅰ级&emsp;</label>
+									<input type="radio" name="c4" value="2" id="" class="input-radio"><label>Ⅱ级&emsp;</label>
+									<input type="radio" name="c4" value="3" id="" class="input-radio"><label>Ⅲ级&emsp;</label>
+									<input type="radio" name="c4" value="4" id="" class="input-radio"><label>Ⅳ级</label>
+								</div>
+							</div>
+							<div class="input-title">4、抗心律失常药物</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c5" value="1" id="c5-1">
+									<label for="c5-1">胺碘酮</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c5" value="2" id="c5-2">
+									<label for="c5-2">普罗帕酮</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c5" value="3" id="c5-3">
+									<label for="c5-3">索它洛尔</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c5" value="4" id="c5-4">
+									<label for="c5-4">β-阻滞剂</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c5" value="5" id="c5-5">
+									<label for="c5-5">钙通道阻滞剂</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c5" value="6" id="c5-6">
+									<label for="c5-6">洋地黄</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="c5" value="7" id="c5-7">
+									<label for="c5-7">其它抗心律失常药</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="c6" name="c6" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">5、抗栓药物</div>
+							<div class="input-item">
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="1" id="c7-1">
+									<label for="c7-1">利伐沙班</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="2" id="c7-2">
+									<label for="c7-2">达比加群</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="3" id="c7-3">
+									<label for="c7-3">抗血小板药物</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="4" id="c7-4">
+									<label for="c7-4">阿司匹林</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="5" id="c7-5">
+									<label for="c7-5">氯吡格雷</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="6" id="c7-6">
+									<label for="c7-6">阿司匹林+氯吡格雷</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox" name="c7" value="7" id="c7-7">
+									<label for="c7-7">华法林</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="input-title">INR数值</div>
+										<input type="text" id="c8" name="c8" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0;">
+									<input type="checkbox" class="input-checkbox" name="c7" value="8" id="c7-8">
+									<label for="c7-8">其它</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="c9" name="c9" class="mui-input-clear" placeholder="请填写">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">6、超声心动图</div>
+							<div class="input-item">
+								<div class="input-group">
+									<div class="input-title">LA(mm)</div>
+									<div class="mui-input-row">
+										<input type="text" id="c10" name="c10" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group">
+									<div class="input-title">LV(mm)</div>
+									<div class="mui-input-row">
+										<input type="text" id="c11" name="c11" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+								<div class="input-group" style="border-bottom: 0px;">
+									<div class="input-title">LVEF(%)</div>
+									<div class="mui-input-row">
+										<input type="text" id="c12" name="c12" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+							<div class="input-title">7、卒中</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c13" value="1" id="" class="input-radio"><label>无&emsp;</label>
+									<input type="radio" name="c13" value="2" id="" class="input-radio"><label>有</label>
+								</div>
+							</div>
+							<div class="input-title">8、再次住院</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;padding-bottom: 0;">
+									<input type="radio" name="c14" value="1" id="" class="input-radio item-radio"><label>无&emsp;</label>
+
+								</div>
+								<div style="display: flex;flex-direction: row;align-items: center">
+									<div class="radio-group" style="border-bottom: 0;align-items: center;">
+										<input type="radio" name="c14" value="2" id="" class="input-radio item-radio"><label>有&emsp;</label>
+										<div class="input-group" style="border-bottom: 0;padding-left: 20px;">
+											<label>住院原因：</label>
+											<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 2px;">
+												<div class="mui-input-row">
+													<input type="text" id="c15" name="c15" class="mui-input-clear" placeholder="请填写" style="margin: 0;">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="input-title">9、再次消融</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c16" value="1" id="" class="input-radio"><label>无&emsp;</label>
+									<input type="radio" name="c16" value="2" id="" class="input-radio"><label>有</label>
+								</div>
+							</div>
+							<div class="input-title">10、心房食道瘘</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c17" value="1" id="" class="input-radio"><label>无&emsp;</label>
+									<input type="radio" name="c17" value="2" id="" class="input-radio"><label>有</label>
+								</div>
+							</div>
+							<div class="input-title">11、肺静脉狭窄</div>
+							<div class="input-item">
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c18" value="1" id="" class="input-radio"><label>无&emsp;</label>
+									<input type="radio" name="c18" value="2" id="" class="input-radio"><label>有</label>
+								</div>
+							</div>
+							<div class="input-title">12、食道超声</div>
+							<div class="input-item" style="border-bottom: 0;">
+								<div class="radio-group">
+									<label class="input-title">封堵器内皮化</label>
+									<input type="radio" name="c19" value="1" id="" class="input-radio"><label>是&emsp;</label>
+									<input type="radio" name="c19" value="2" id="" class="input-radio"><label>否</label>
+								</div>
+								<div class="input-title">残余漏(mm)</div>
+								<div class="radio-group" style="border-bottom: 0;padding-bottom: 0;">
+									<input type="radio" name="c20" value="1" id="" class="input-radio item-radio"><label>无&emsp;</label>
+								</div>
+								<div class="radio-group" style="border-bottom: 0;">
+									<input type="radio" name="c20" value="2" id="" class="input-radio item-radio"><label>有</label>
+									<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+										<div class="mui-input-row">
+											<input type="text" id="c21" name="c21" class="mui-input-clear" placeholder="请填写" style="margin: 0;">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</form>
+			<form id="FORM_D">
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">4.2 左心耳封堵术后随访</div>
+						<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="D_TYPE" name="D_TYPE">
+									<option value="1">4.2.1第1次随访</option>
+									<option value="2">4.2.2第2次随访</option>
+									<option value="3">4.2.3第3次随访</option>
+									<option value="4">4.2.2第4次随访</option>
+									<option value="5">4.2.3第5次随访</option>
+									<option value="6">4.2.2第6次随访</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">随访日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input type="text" readonly name="d1" id="d1" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">术后天数</div>
+							<div class="mui-input-row">
+								<input type="text" id="d2" name="d2" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-title">1、超声心动图</div>
+						<div class="input-item">
+							<div class="input-group">
+								<div class="input-title">LA(mm)</div>
+								<div class="mui-input-row">
+									<input type="text" id="d3" name="d3" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="input-title">LV(mm)</div>
+								<div class="mui-input-row">
+									<input type="text" id="d4" name="d4" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+							<div class="input-group" style="border-bottom: 0px;">
+								<div class="input-title">LVEF(%)</div>
+								<div class="mui-input-row">
+									<input type="text" id="d5" name="d5" class="mui-input-clear" placeholder="请填写">
+								</div>
+							</div>
+
+						</div>
+						<div class="input-title">2、左心耳闭合情况</div>
+						<div class="input-item">
+							<div class="input-title">有无残余分流</div>
+							<div class="radio-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="radio" name="d6" value="1" id="" class="input-radio item-radio"><label>无&emsp;</label>
+							</div>
+							<div class="radio-group" style="border-bottom: 0;align-items: center;">
+								<input type="radio" name="d6" value="2" id="" class="input-radio item-radio"><label>有&emsp;</label>
+								<div class="input-group" style="border-bottom: 0;padding-left: 20px;">
+									<label>分流直径(mm)&emsp;</label>
+									<div class="mui-input-row">
+										<input type="text" id="d7" name="d7" class="mui-input-clear" placeholder="请填写" style="margin: 0;">
+									</div>
+								</div>
+							</div>
+							<div class="radio-group" style="border-bottom: 0;">
+								<label class="input-title">分流量是否减少</label>
+								<input type="radio" name="d8" value="1" id="" class="input-radio"><label>是&emsp;</label>
+								<input type="radio" name="d8" value="2" id="" class="input-radio"><label>否</label>
+							</div>
+						</div>
+						<div class="input-title">3、抗栓治疗</div>
+						<div class="input-item">
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d9" value="1" id="d9-1">
+								<label for="d9-1">利伐沙班</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d9" value="2" id="d9-2">
+								<label for="d9-2">达比加群</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d9" value="3" id="d9-3">
+								<label for="d9-3">阿司匹林+氯吡格雷</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d9" value="4" id="d9-4">
+								<label for="d9-4">阿司匹林</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d9" value="5" id="d9-5">
+								<label for="d9-5">氯吡格雷</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d9" value="6" id="d9-6">
+								<label for="d9-6">华法林</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+									<div class="input-title">INR数值</div>
+									<div class="mui-input-row">
+										<input type="text" id="d10" name="d10" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+							<div class="checkbox-group" style="border-bottom: 0;">
+								<input type="checkbox" class="input-checkbox" name="d9" value="7" id="d9-7">
+								<label for="d9-7">其它</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+									<div class="mui-input-row">
+										<input type="text" id="d11" name="d11" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="input-title">4、不良事件</div>
+						<div class="input-item" style="border-bottom: 0;">
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="1" id="d12-1">
+								<label for="d12-1">死亡</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="2" id="d12-2">
+								<label for="d12-2">封堵器脱落</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="3" id="d12-3">
+								<label for="d12-3">缺血性脑卒中</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="4" id="d12-4">
+								<label for="d12-4">出血性脑卒中</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="5" id="d12-5">
+								<label for="d12-5">阿司匹林</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="6" id="d12-6">
+								<label for="d12-6">体循环栓塞</label>
+							</div>
+							<div class="checkbox-group">
+								<input type="checkbox" class="input-checkbox" name="d12" value="7" id="d12-7">
+								<label for="d12-7">封堵器表面血栓形成</label>
+							</div>
+							<div class="checkbox-group" style="border-bottom: 0;">
+								<input type="checkbox" class="input-checkbox" name="d12" value="8" id="d12-8">
+								<label for="d12-8">其它</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-left: 20px;">
+									<div class="mui-input-row">
+										<input type="text" id="d13" name="d13" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<!--<input type="button" value="提交" onclick="submit(FORM_DATA);" />-->
+		</div>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			'use strict'
+			var FORM_DATA = {
+				A_DATA: [],
+				B_DATA: [],
+				C_DATA: [],
+				D_DATA: []
+			};
+			initFormData(FORM_DATA);
+			mui('form').on('change', 'select', function() {
+				var name = this.getAttribute("name");
+				if(name.indexOf('_TYPE') > -1) {
+					var DATA_KEY = name.substr(0, 2) + 'DATA';
+					var INDEX = $("select[name=" + name + "]")[0].value - 1;
+					setData(FORM_DATA, FORM_DATA[DATA_KEY][INDEX]);
+				}
+			});
+
+			window.addEventListener('message', function(e) {
+				var message = e.data;
+				if(JSON.parse(message).type === 'SET') {
+					var formData = JSON.parse(JSON.parse(message).formData);
+					setData(FORM_DATA, formData);
+				} else if(JSON.parse(message).type === 'GET') {
+					submit(FORM_DATA);
+				}
+			});
+
+			function submit(FORM_DATA) {
+				$('.edit-time').each(function() {
+					this.value = formatTimeString();
+				});
+				var form1Obj = $("#form1").serializeObject();
+				var form2Obj = $("#form2").serializeObject();
+				var jsonObj = {};
+				for(var key in form1Obj) {
+					jsonObj[key] = form1Obj[key];
+				}
+				for(var key in form2Obj) {
+					jsonObj[key] = form2Obj[key];
+				}
+				//					Object.assign(jsonObj, form1Obj, form2Obj);
+				for(var key in FORM_DATA) {
+					var formKey = key.split('_')[0];
+					var formObj = $("#FORM_" + formKey).serializeForm(FORM_DATA, key);
+					//						Object.assign(jsonObj, formObj);
+					for(var key in formObj) {
+						jsonObj[key] = formObj[key];
+					}
+				}
+				sendData(JSON.stringify(jsonObj));
+			}
+		</script>
+	</body>
+
+</html>

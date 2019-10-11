@@ -1,0 +1,834 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title></title>
+        <link rel="stylesheet" href="../../css/mui.css">
+        <link rel="stylesheet" href="../../css/exmj/casebook.css">
+        <link rel="stylesheet" href="../../css/app.css" />
+        <link rel="stylesheet" href="../../css/exmj/uploadprogress.css">
+        <style>
+            input[type='text'],
+            input[type='number'],
+            input[type='tel'] {
+                padding: 0px;
+            }
+            
+            .red-mark {
+                font-weight: bold;
+                height: 44px;
+                line-height: 44px;
+                width: 10px;
+                margin-left: -9px;
+                position: absolute;
+                float: left;
+                display: block;
+                font-size: 16px;
+                color: red;
+            }
+            
+            .personnal_div {
+                height: 60px;
+                margin-top: 5px;
+            }
+            
+            .btn-default {
+                height: 36px;
+                color: #8A8581;
+                background-color: #F9F7F8;
+                border-color: #ccc;
+                font-size: 16px;
+            }
+            
+            .main_list_item_div_top {
+                height: 40px;
+                background: #ffffff;
+            }
+            
+            .main_list_item_div_top:active {
+                height: 40px;
+                background: #D4D4D4;
+            }
+            
+            .main_list_item_div_middle {
+                height: 40px;
+                background: #ffffff;
+            }
+            
+            .main_list_item_div_middle:active {
+                height: 40px;
+                background: #D4D4D4;
+            }
+            
+            .main_list_item_div_bottom {
+                height: 40px;
+                background: #ffffff;
+            }
+            
+            .main_list_item_div_bottom:active {
+                height: 40px;
+                background: #D4D4D4;
+            }
+            
+            .main_list_item_line {
+                height: 2px;
+                background: #EFEFF4;
+            }
+            
+            .main_list_item_div_span {
+                line-height: 40px;
+                margin-right: 15px;
+                color: #00AAEF;
+                font-size: 16px;
+            }
+            
+            .main_list_item_div_div {
+                float: left;
+                height: 40px;
+                line-height: 40px;
+                color: #8A8581;
+                margin-left: 50px;
+                font-size: 16px;
+            }
+            
+            .myBackdrop {
+                background-color: rgba(0, 0, 0, .7);
+                border-radius: 10px;
+                top: 42%;
+                right: 34%;
+                bottom: 42%;
+                left: 34%;
+                display: none;
+            }
+            
+            .progress_main {
+                position: absolute;
+                top: 72%;
+                left: 50%;
+                width: 240px;
+                height: 50px;
+                margin-top: -50px;
+                margin-left: -120px;
+                line-height: 30px;
+                font-size: 14px;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="left: 0px;"></a>
+            <h1 id="title" class="mui-title">影像资料</h1>
+            <a id="help" class="title-bar-text mui-pull-right" >填写指南</a>
+        </header>
+        <div class="mui-content">
+            <div class="casebook-div">
+                <div class="casebook-div-header">
+                    <div class="user-avatar-div">
+                        <img class="mui-icon mui-grid-view-img " src="../../img/member/member_add.png" style="position: absolute;">
+                        <img id="casebook_icon" class="mui-icon mui-grid-view-img mui-grid-view-img-content" src="../../img/member/member_default.png">
+                        <a id="casebook_name" class="casebook-div-header-text">我的病历</a>
+                    </div>
+                    <div id="casebook_chat" class="user-chat-div">
+                        <img  class="casebook-div-header-chat" src="../../img/casebook/casebook_chat.png">
+                        <p class="casebook-div-chat-text">联系客服</p>
+                    </div>
+                </div>
+
+                <p class="casebook-div-divider">选择发病部位
+                    <a class="casebook-div-divider-small">（可多选）</a>
+                </p>
+                <div id="body_part" class="casebook-div-content">
+                    <table width="100%">
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="上肢" type="checkbox">
+                                    <a>上肢</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="下肢" type="checkbox">
+                                    <a>下肢</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="关节" type="checkbox">
+                                    <a>关节</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="全身" type="checkbox">
+                                    <a>全身</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="脊柱" type="checkbox">
+                                    <a>脊柱</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="颈部" type="checkbox">
+                                    <a>颈部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="腿部" type="checkbox">
+                                    <a>腿部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="腰部" type="checkbox">
+                                    <a>腰部</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肘部" type="checkbox">
+                                    <a>肘部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="腹部" type="checkbox">
+                                    <a>腹部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="足部" type="checkbox">
+                                    <a>足部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="膝部" type="checkbox">
+                                    <a>膝部</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="胸部" type="checkbox">
+                                    <a>胸部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="头部" type="checkbox">
+                                    <a>头部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肩部" type="checkbox">
+                                    <a>肩部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="手部" type="checkbox">
+                                    <a>手部</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="臀部" type="checkbox">
+                                    <a>臀部</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="其它" type="checkbox" control="picker_body_part_other">
+                                    <a>其它</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mui-input-row ">
+                        <textarea id='picker_body_part_other' maxlength="200" class="mui-input-clear casebook-check-more" placeholder="请输入发病的详细部位"></textarea>
+                    </div>
+                </div>
+                <p class="casebook-div-divider">主要疼痛症状
+                    <a class="casebook-div-divider-small">（可多选）</a>
+                </p>
+                <div id="symptom" class="casebook-div-content">
+                    <table width="100%">
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="疼痛" type="checkbox">
+                                    <a>疼痛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="放射痛" type="checkbox">
+                                    <a>放射痛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="麻木" type="checkbox">
+                                    <a>麻木</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肿大" type="checkbox">
+                                    <a>肿大</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="僵直" type="checkbox">
+                                    <a>僵直</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="畸形" type="checkbox">
+                                    <a>畸形</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="发热" type="checkbox">
+                                    <a>发热</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="眼干" type="checkbox">
+                                    <a>眼干</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="呼吸困难" type="checkbox">
+                                    <a class="casebook-check-box-long">呼吸困难</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肿块" type="checkbox">
+                                    <a>肿块</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="囊肿" type="checkbox">
+                                    <a>囊肿</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肌肉酸痛" type="checkbox">
+                                    <a class="casebook-check-box-long">肌肉酸痛</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="乏力" type="checkbox">
+                                    <a>乏力</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="头痛" type="checkbox">
+                                    <a>头痛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="寒颤" type="checkbox">
+                                    <a>寒颤</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="神经痛" type="checkbox">
+                                    <a>神经痛</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肌肉萎缩" type="checkbox">
+                                    <a class="casebook-check-box-long">肌肉萎缩</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="贫血" type="checkbox">
+                                    <a>贫血</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="痉挛" type="checkbox">
+                                    <a>痉挛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="脱臼" type="checkbox">
+                                    <a>脱臼</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="失禁" type="checkbox">
+                                    <a>失禁</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="便秘" type="checkbox">
+                                    <a>便秘</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="其它" type="checkbox" control="picker_symptom_other">
+                                    <a>其它</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mui-input-row ">
+                        <textarea id='picker_symptom_other' maxlength="200" class="mui-input-clear casebook-check-more" placeholder="请补充主要疼痛的症状"></textarea>
+                    </div>
+                </div>
+                <p class="casebook-div-divider">疼痛伴随症状
+                    <a class="casebook-div-divider-small">（可多选）</a>
+                </p>
+                <div id="acs_symptom" class="casebook-div-content">
+                    <table width="100%">
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="疼痛" type="checkbox">
+                                    <a>疼痛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="放射痛" type="checkbox">
+                                    <a>放射痛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="麻木" type="checkbox">
+                                    <a>麻木</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肿大" type="checkbox">
+                                    <a>肿大</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="僵直" type="checkbox">
+                                    <a>僵直</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="畸形" type="checkbox">
+                                    <a>畸形</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="发热" type="checkbox">
+                                    <a>发热</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="眼干" type="checkbox">
+                                    <a>眼干</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="呼吸困难" type="checkbox">
+                                    <a class="casebook-check-box-long">呼吸困难</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肿块" type="checkbox">
+                                    <a>肿块</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="囊肿" type="checkbox">
+                                    <a>囊肿</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肌肉酸痛" type="checkbox">
+                                    <a class="casebook-check-box-long">肌肉酸痛</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="乏力" type="checkbox">
+                                    <a>乏力</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="头痛" type="checkbox">
+                                    <a>头痛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="寒颤" type="checkbox">
+                                    <a>寒颤</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="神经痛" type="checkbox">
+                                    <a>神经痛</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="肌肉萎缩" type="checkbox">
+                                    <a class="casebook-check-box-long">肌肉萎缩</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="贫血" type="checkbox">
+                                    <a>贫血</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="痉挛" type="checkbox">
+                                    <a>痉挛</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="脱臼" type="checkbox">
+                                    <a>脱臼</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="casebook-check-box-tr">
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="失禁" type="checkbox">
+                                    <a>失禁</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="便秘" type="checkbox">
+                                    <a>便秘</a>
+                                </div>
+                            </td>
+                            <td width="25%" class="tdborder-title">
+                                <div class="mui-checkbox casebook-check-box">
+                                    <input name="checkbox" value="其它" type="checkbox" control="picker_acs_symptom_other">
+                                    <a>其它</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mui-input-row ">
+                        <textarea id='picker_acs_symptom_other' maxlength="200" class="mui-input-clear casebook-check-more" placeholder="请输入其他补充疼痛伴随症状"></textarea>
+                    </div>
+                </div>
+                <p class="casebook-div-divider">发病时间及病情加重时间
+                </p>
+                <div class="mui-input-row casebook-div-content">
+                    <textarea id='complaint_aggravate_text' maxlength="200" class="mui-input-clear question" placeholder="如：3天前开始疼痛，昨天开始病情加重且局部淤青。"></textarea>
+                </div>
+            </div>
+            <div class="bottom-fix-buttom-div">
+                <button id="back" class="casebook-div-button casebook-div-button-half">上一步</button>
+                <button id="next" class="casebook-div-button casebook-div-hilight">下一步（4/4）</button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../js/mui.js"></script>
+    <script type="text/javascript" src="../../js/libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../../js/exmj/app.js"></script>
+    <script type="text/javascript" src="../../js/exmj/utils/hfutils.js"></script>
+    <script type="text/javascript" src="../../js/exmj/db/hfwebsql.js"></script>
+    <script type="text/javascript" src="../../js/exmj/utils/qq.js"></script>
+    <script>
+        var orderContainer = {};
+        var storage;
+        mui.init();
+        document.getElementById("casebook_chat").addEventListener('click', function() {
+            if(lockTouch()) {
+                openQQ();
+                unlockTouch(DELAY_1000S);
+            }
+        });
+        $(document).ready(function() {
+            storage = window.localStorage;
+            //already created orderContainer in casebook.html!!!
+            var saved = storage.getItem(WLS_CACHING_WHOLE_ORDER) || '{}';
+            orderContainer = JSON.parse(saved) || {};
+            initPartComplaint();
+        });
+
+        mui.plusReady(function() {
+            plus.statistic.eventTrig("casebook_audio_video_stuff", "open");
+            plus.webview.currentWebview().setStyle({
+                'scrollIndicator': 'none',
+                'popGesture': 'none'
+            });
+            mui('.mui-scroll-wrapper').scroll();
+            mui("#middlePopover").on("tap", "img", function() {
+                mui('#middlePopover').popover('toggle', document.getElementById("middlePopover"));
+            });
+            mui('.casebook-check-box').on('change', 'input', function() {
+                console.log('change');
+                var control = this.getAttribute("control");
+                if(this.checked) {
+                    if(control) {
+                        document.getElementById(control).style.display = "inline-block";
+                    }
+                    this.nextElementSibling.style.color = "#2BB2AA";
+                } else {
+                    if(control) {
+                        document.getElementById(control).style.display = "none";
+                    }
+                    this.nextElementSibling.style.color = "#9B9B9B";
+                }
+                //onInput(document.getElementById('complaint_aggravate_text'));
+                var data = this.getAttribute("value");
+                console.log("data " + data);
+            });
+            updateIcons();
+        });
+
+        function updateCheckGroup(selectors, chiefStr) {
+            var bodyPart = chiefStr.split("@");
+            if(bodyPart.length > 0) {
+                var inputs = document.querySelectorAll(selectors);
+                if(bodyPart.length > 1) {
+                    inputs[inputs.length - 1].checked = true;
+                    document.getElementById(inputs[inputs.length - 1].getAttribute("control")).style.display = "inline-block";
+                    document.getElementById(inputs[inputs.length - 1].getAttribute("control")).value = bodyPart[1];
+                    inputs[inputs.length - 1].nextElementSibling.style.color = "#2BB2AA";
+                }
+                var selects = bodyPart[0].split(",");
+                var m = 0;
+                for(var i = 0; i < selects.length; i++) {
+                    for(var j = m; j < inputs.length - 1; j++) {
+                        if(inputs[j].getAttribute("value") == selects[i]) {
+                            m = j;
+                            inputs[j].checked = true;
+                            inputs[j].nextElementSibling.style.color = "#2BB2AA";
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        function initPartComplaint() {
+            updateCheckGroup("#body_part > table > tbody > tr > td > div > input[type=\"checkbox\"]", orderContainer.Chief_complaint.body);
+            updateCheckGroup("#symptom > table > tbody > tr > td > div > input[type=\"checkbox\"]", orderContainer.Chief_complaint.symptom);
+            updateCheckGroup("#acs_symptom > table > tbody > tr > td > div > input[type=\"checkbox\"]", orderContainer.Chief_complaint.simultaneous);
+            document.getElementById('complaint_aggravate_text').value = orderContainer.Chief_complaint.aggravating || '';
+        }
+
+        function updatePartComplaint() {
+            var saved = storage.getItem(WLS_CACHING_WHOLE_ORDER) || '{}';
+            orderContainer = JSON.parse(saved) || {};
+            var complaint = {
+                "body": getAndBuildCheckStrings("#body_part > table > tbody > tr > td > div > input[type=\"checkbox\"]"),
+                "symptom": getAndBuildCheckStrings("#symptom > table > tbody > tr > td > div > input[type=\"checkbox\"]"),
+                "simultaneous": getAndBuildCheckStrings("#acs_symptom > table > tbody > tr > td > div > input[type=\"checkbox\"]"),
+                "aggravating": document.getElementById('complaint_aggravate_text').value
+            };
+            
+            orderContainer.Chief_complaint = complaint;
+            storage.setItem(WLS_CACHING_WHOLE_ORDER, JSON.stringify(orderContainer));
+        }
+
+        //      function onInput(obj) {
+        //          var body = getAndBuildCheckStrings("#body_part > table > tbody > tr > td > div > input[type=\"checkbox\"]");
+        //          var symptom = getAndBuildCheckStrings("#symptom > table > tbody > tr > td > div > input[type=\"checkbox\"]");
+        //          if(body.length > 0 && symptom.length > 0 && obj.value.length > 0) {
+        //              $('#quick_submit').addClass('casebook-div-hilight');
+        //              $('#next_btn').addClass('casebook-div-hilight');
+        //          } else {
+        //              $('#quick_submit').removeClass('casebook-div-hilight');
+        //              $('#next_btn').removeClass('casebook-div-hilight');
+        //          }
+        //      }
+
+        function getAndBuildCheckStrings(selectors) {
+            var str = '';
+            var inputs = document.querySelectorAll(selectors);
+            for(var j = 0; j < inputs.length - 1; j++) {
+                if(inputs[j].checked) {
+                    str += inputs[j].getAttribute("value") + ",";
+                }
+            }
+            if(str.length > 0) {
+                str = str.substring(0, str.length - 1);
+            }
+            if(inputs[inputs.length - 1].checked) {
+                str += "@" + document.getElementById(inputs[inputs.length - 1].getAttribute("control")).value;
+            }
+
+            return str;
+        }
+
+        function updateIcons() {
+            document.getElementById('casebook_name').innerText = orderContainer.personal.name + '的病历';
+            document.getElementById("casebook_icon").src = window.localStorage.getItem(WLS_SAVE_CASEBOOK_ICON);
+        }
+
+        var old_back = mui.back;
+        var open_back = function() {
+            updatePartComplaint();
+            old_back();
+        }
+        mui.back = open_back;
+
+        document.getElementById("back").addEventListener('click', function(event) {
+            if(lockTouch()) {
+                updatePartComplaint();
+                mui.back();
+                unlockTouch(DELAY_1000S);
+            }
+        });
+
+        document.getElementById("next").addEventListener('tap', function(event) {
+            if(lockTouch()) {
+                updatePartComplaint();
+                setTimeout(function() {
+                    mui.openWindow({
+                        id: "casebook_previews",
+                        url: "casebook_previews.html",
+                        extras: {},
+                        styles: {
+                            scrollIndicator: 'none',
+                        },
+                        waiting: {
+                            autoShow: EXMJ_SHOW_WAITING,
+                            options: EXMJ_SHOWWAITING_OPTIONS
+                        },
+                    });
+                }, 200);
+                unlockTouch(DELAY_1000S);
+            }
+
+        });
+
+        document.getElementById("help").addEventListener('click', function() {
+            if (lockTouch()) {
+                mui.openWindow({
+                    url: '../msgcenter/ad.html',
+                    id: 'help_url',
+                    show: {
+                        aniShow: 'pop-in'
+                    },
+                    styles: {
+                        popGesture: 'close'
+                    },
+                    waiting: {
+                        autoShow: EXMJ_SHOW_WAITING,
+                        options: EXMJ_SHOWWAITING_OPTIONS
+                    },
+                    extras: {
+                        url: "http://info.eymj.com.cn/marketing/casebookHelpDetails.html",
+                        title: "填写指南",
+                        share: false
+                    }
+                });
+                unlockTouch(DELAY_1000S);
+            }
+        });
+
+        // function deleteThisOrder(id, appointmentId) {
+        //  console.log('will delete order: index - ' + id + ' appointmentId - ' + appointmentId);
+        //  mui.ajax(EXMJ_PATIENT_BASE_URL + ajax_del_appointment, {
+        //      data: JSON.stringify({
+        //          'appointment_id': appointmentId
+        //      }),
+        //      type: 'post',
+        //      dataType: 'json',
+        //      timeout: AJAX_TIMEOUT_ONE,
+        //      success: function(data) {
+        //          if(data.result == 1) {
+        //              deleteDirectoryThen('cache/', appointmentId).then(function() {
+        //                  console.log('delete order 1 - delete useless picture files in cache here!');
+        //                  deleteDirectoryThen('download/', appointmentId).then(function() {
+        //                      console.log('delete order 2 - delete useless picture files in download here!');
+        //                      deleteOrderInDB(id, ORDER_UNSUBMITTED, function() {
+        //                          muiFire("order_center_unsubmitted.html", MESSAGE_ORDER_UNSUBMITTED, { //刷新未提交显示
+        //                              type: ORDER_UNSUBMITTED_UPDATE_UI,
+        //                          });
+        //                      }, quit);
+        //                  });
+        //              });
+        //          } else {
+        //              plus.nativeUI.toast(i18n.t("confirm.failtoDel"));
+        //          }
+        //      },
+        //      error: function(xhr, type, errorThrown) {
+        //          errorTracking(xhr, type, errorThrown, 'casebook_audio_video_stuff - ' + ajax_del_appointment);
+        //          errorReport(xhr, type, errorThrown);
+        //      }
+        //  });
+        // }
+    </script>
+</html>

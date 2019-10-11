@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>1004急性脑梗死登记</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/template.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form id="form1" name="form1">
+				<div class="title mui-content-padded">1 患者个人信息</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">患者姓名</div>
+							<div class="mui-input-row">
+								<input id="patientName" name="patientName" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">年龄</div>
+							<div class="mui-input-row">
+								<input id="age" name="age" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">性别</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="sex" name="sex">
+									<option value="1" selected>男</option>
+									<option value="2">女</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">就诊日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" id="input1" name="input1" value="" data-options='{}' class="input-time timePicker" placeholder="选择日期">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">出院日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" id="input2" name="input2" value="" data-options='{}' class="input-time timePicker" placeholder="选择日期">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">联系电话</div>
+							<div class="mui-input-row">
+								<input id="telephone" name="telephone" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">住院号</div>
+							<div class="mui-input-row">
+								<input id="input3" name="input3" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+				</ul>
+				<div class="title mui-content-padded">2 诊断及评估</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">发病时间</div>
+							<div class="mui-input-row">
+								<input type="text" id="input4" name="input4" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">OCSP选项</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="input5" name="input5">
+									<option value="1" selected>请选择</option>
+									<option value="2">完全前循环梗死</option>
+									<option value="3">部分前循环梗死</option>
+									<option value="4">后循环梗死</option>
+									<option value="5">腔隙性梗死</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">伴发疾病</div>
+							<div class="mui-input-row">
+								<textarea id="input6" name="input6" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">NIHSS评分</div>
+						<div class="input-group">
+							<div class="input-title">入院时</div>
+							<div class="mui-input-row">
+								<input id="input7" name="input7" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">溶栓后</div>
+							<div class="mui-input-row">
+								<input id="input8" name="input8" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">出院时</div>
+							<div class="mui-input-row">
+								<input id="input9" name="input9" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">mRS评分</div>
+						<div class="input-group">
+							<div class="input-title">入院时</div>
+							<div class="mui-input-row">
+								<input id="input10" name="input10" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">溶栓后</div>
+							<div class="mui-input-row">
+								<input id="input11" name="input11" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">出院时</div>
+							<div class="mui-input-row">
+								<input id="input12" name="input12" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-group">
+							<div class="input-title">
+								病情程度分析等级</div>
+							<div class="mui-input-row">
+								<input id="input13" name="input13" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">中医证型</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="input14" name="input14">
+									<option value="1" selected>请选择</option>
+									<option value="2">痰瘀阻络</option>
+									<option value="3">痰瘀滞络</option>
+									<option value="4">痰热腑实</option>
+									<option value="5">气虚血瘀</option>
+									<option value="6">风痰阻络</option>
+									<option value="7">阴虚风动</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">主方</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="input15" name="input15">
+									<option value="1" selected>请选择</option>
+									<option value="2">无</option>
+									<option value="3">自拟方</option>
+									<option value="4">通脑饮</option>
+									<option value="5">天麻钩藤饮</option>
+									<option value="6">天麻通脑饮</option>
+									<option value="7">补阳还五汤</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">3 综合治疗</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" >
+						<div class="input-title" >Rt-PA</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<input type="radio" name="input16" value="1" id="input16" class="input-radio "><label>无</label>
+							<input type="radio" name="input16" value="2" id="input16" class="input-radio "><label>有</label>
+						</div>
+							<div class="input-group">
+							<div class="input-title">
+								DTN(分钟)</div>
+							<div class="mui-input-row">
+								<input id="input17" name="input17" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						    </div>
+							<div class="input-title" >抗血小板</div>
+							<div style="padding-right: 0px;"">
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input18" value="1" id="input18-1">
+									<label for="input18-1">阿司匹林</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input18" value="2" id="input18-2">
+									<label for="input18-2">氯吡格雷</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input18" value="3" id="input18-3">
+									<label for="input18-3">西洛他挫</label>
+								</div>
+							</div>
+							<div class="input-title">抗凝</div>
+							<div style="padding-right: 0px;"">
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input19" value="1" id="input19-1">
+									<label for="input19-1">替罗非班</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input19" value="2" id="input19-2">
+									<label for="input19-2">阿加曲班</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input19" value="3" id="input19-3">
+									<label for="input19-3">低分子肝素</label>
+								</div>
+								<div class="checkbox-group">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input19" value="4" id="input19-4">
+									<label for="input19-4">达比加群</label>
+								</div>
+							</div>
+							<div class="input-title">他汀类</div>
+							<div style="padding-right: 0px;">
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input20" value="1" id="input20-1">
+									<label for="input20-1">瑞舒伐他汀</label>
+								</div>
+								<div class="checkbox-group" style="border-bottom: 0px;">
+									<input type="checkbox" class="input-checkbox num-checkbox" name="input20" value="2" id="input20-2">
+									<label for="input20-2">阿托伐他汀</label>
+								</div>
+							</div>
+
+						
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+									<div class="input-title" >依折麦布</div>
+							<div class="radio-group" style="border-bottom: 0;">
+								<input type="radio" name="input21" value="1" id="input21" class="input-radio "><label>无</label>
+								<input type="radio" name="input21" value="2" id="input21" class="input-radio "><label>有</label>
+							</div>
+							
+							<div class="input-group">
+								<div class="input-title">脑保护药-静脉</div>
+								<div class="mui-input-row">
+									<textarea id="input22" name="input22" placeholder="请填写主述内容"></textarea>
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="input-title">脑保护药-口服</div>
+								<div class="mui-input-row">
+									<textarea id="input23" name="input23" placeholder="请填写主述内容"></textarea>
+								</div>
+							</div>
+							<div class="input-group">
+								<div class="input-title">中药活血化瘀(静脉)</div>
+								<div class="mui-input-row">
+									<textarea id="input24" name="input24" placeholder="请填写主述内容"></textarea>
+								</div>
+							</div>
+							<div class="input-title" >多奈哌齐</div>
+							<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-group">
+								<input type="radio" name="input25" value="1" id="input25" class="input-radio "><label>无</label><br/>
+							</div>
+							<div class="radio-group">
+								<input type="radio" name="input25" value="2" id="input25" class="input-radio "><label>有</label><br/>
+							</div>
+							<div class="radio-group" style="border-bottom: 0;padding-bottom: 0;">
+								<input type="radio" name="input25" value="3" id="input25" class="input-radio item-radio"><label>其他</label>
+								<div class="input-group" style="margin-top: 0;border-bottom: 0;padding-bottom: 2px;padding-left: 22px;">
+									<div class="mui-input-row">
+										<input type="text" id="input26" name="input26" class="mui-input-clear" placeholder="请填写">
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">4 其他</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">MMSE评分</div>
+							<div class="mui-input-row">
+								<input type="text" id="input27" name="input27" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">MOCA评分</div>
+							<div class="mui-input-row">
+								<input type="text" id="input28" name="input28" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">基因检测</div>
+							<div class="mui-input-row">
+								<input type="text" id="input29" name="input29" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">疗效</div>
+							<div class="mui-input-row">
+								<input type="text" id="input30" name="input30" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">楼层</div>
+							<div class="mui-input-row">
+								<input type="text" id="input31" name="input31" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">备注</div>
+							<div class="mui-input-row">
+								<input type="text" id="input32" name="input32" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" >
+							<div class="input-title">CTA</div>
+							<div class="mui-input-row">
+								<textarea id="input33" name="input33" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0">
+							<div class="input-title">颈动脉、椎动脉超声</div>
+							<div class="mui-input-row">
+								<textarea id="input34" name="input34" placeholder="请填写"></textarea>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<!--<input type="button" value="提交" onclick="submit(FORM_DATA);" />-->
+		</div>
+		</div>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ethnic.js" type="text/javascript" charset="utf-8"></script>
+		<script src='js/autosize.js'></script>
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			'use strict'
+			autosize(document.querySelectorAll('textarea'));
+			var FORM_DATA = {};
+			initFormData(FORM_DATA);
+			mui('form').on('change', 'select', function() {
+				var name = this.getAttribute("name");
+				if(name.indexOf('_TYPE') > -1) {
+					var DATA_KEY = name.substr(0, 2) + 'DATA';
+					var INDEX = $("select[name=" + name + "]")[0].value - 1;
+					setData(FORM_DATA, FORM_DATA[DATA_KEY][INDEX]);
+				}
+			});
+			document.addEventListener('message', function(e) {
+				const message = e.data;
+				if(JSON.parse(message).type === 'SET') {
+					var formData = JSON.parse(JSON.parse(message).formData);
+					setData(FORM_DATA, formData);
+				} else if(JSON.parse(message).type === 'GET') {
+					submit(FORM_DATA);
+				}
+			});
+
+			function submit(FORM_DATA) {
+				$('.edit-time').each(function() {
+					this.value = formatTimeString();
+				});
+				var form1Obj = $("#form1").serializeObject();
+				var jsonObj = {};
+				for(var key in form1Obj) {
+					jsonObj[key] = form1Obj[key];
+				}
+				console.log(jsonObj)
+				sendData(JSON.stringify(jsonObj));
+			}
+		</script>
+	</body>
+
+</html>

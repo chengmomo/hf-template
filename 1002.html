@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>1002省中医院模板</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/template.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form id="form1" name="form1">
+				<div class="title mui-content-padded">1 患者个人信息</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">患者姓名</div>
+							<div class="mui-input-row">
+								<input id="patientName" name="patientName" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">联系电话</div>
+							<div class="mui-input-row">
+								<input id="telephone" name="telephone" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">身份证号</div>
+							<div class="mui-input-row">
+								<input id="idNumber" name="idNumber" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">患者编号</div>
+							<div class="mui-input-row">
+								<input id="number" name="number" value="" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">性别</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="sex" name="sex">
+									<option value="1" selected>男</option>
+									<option value="2">女</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">出生日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" id="birth" name="birth" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">患者年龄</div>
+							<div class="mui-input-row">
+								<input id="age" name="age" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<!--<div class="input-group">
+							<div class="input-title">病人类型</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="sex" name="sex">
+									<option value="1" selected>住院病人</option>
+									<option value="2">门诊病人</option>
+								</select>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">住院号</div>
+							<input id="InpatientNumber" name="InpatientNumber" type="text" class="mui-input-clear" placeholder="请填写">
+						</div>-->
+						<div class="input-group">
+							<div class="input-title">身高（cm）</div>
+							<div class="mui-input-row">
+								<input id="height" name="height" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">体重（kg）</div>
+							<div class="mui-input-row">
+								<input id="weight" name="weight" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+				</ul>
+			</form>
+
+			<form id="FORM_A">
+				<div class="title mui-content-padded">2 日常生活活动能力（ADL）量表（Barthel指数）</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+							<div class="picker-group" style="padding-left: 0;">
+								<select name="A_TYPE" id="A_TYPE" class="SELECT_TYPE">
+									<option value="1">第一次活动能力量表</option>
+									<option value="2">第二次活动能力量表</option>
+									<option value="3">第三次活动能力量表</option>
+									<option value="4">第四次活动能力量表</option>
+									<option value="5">第五次活动能力量表</option>
+									<option value="6">第六次活动能力量表</option>
+									<option value="7">第七次活动能力量表</option>
+									<option value="8">第八次活动能力量表</option>
+									<option value="9">第九次活动能力量表</option>
+									<option value="10">第十次活动能力量表</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">2.1 进餐</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input1" value="1" id="input1" class="input-radio num-radio" num="10" inputId="input12"><label>独立（10分）</label><br/>
+							<input type="radio" name="input1" value="2" id="input1" class="input-radio num-radio" num="5" inputId="input12"><label>部分独立或需部分帮助（5分）</label><br/>
+							<input type="radio" name="input1" value="3" id="input1" class="input-radio num-radio" num="0" inputId="input12"><label>不能（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.2 洗澡</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input2" value="1" id="input2" class="input-radio num-radio" num="5" inputId="input12"><label>独立（5分）</label><br/>
+							<input type="radio" name="input2" value="2" id="input2" class="input-radio num-radio" num="0" inputId="input12"><label>依赖（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.3 梳理</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input3" value="1" id="input3" class="input-radio num-radio" num="5" inputId="input12"><label>独立（5分）</label><br/>
+							<input type="radio" name="input3" value="2" id="input3" class="input-radio num-radio" num="0" inputId="input12"><label>依赖（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.4 穿衣</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input4" value="1" id="input4" class="input-radio num-radio" num="10" inputId="input12"><label>独立（10分）</label><br/>
+							<input type="radio" name="input4" value="2" id="input4" class="input-radio num-radio" num="5" inputId="input12"><label>需要帮助，但能做一半（5分）</label><br/>
+							<input type="radio" name="input4" value="3" id="input4" class="input-radio num-radio" num="0" inputId="input12"><label>依赖（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.5 大便</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input5" value="1" id="input5" class="input-radio num-radio" num="10" inputId="input12"><label>能控制（10分）</label><br/>
+							<input type="radio" name="input5" value="2" id="input5" class="input-radio num-radio" num="5" inputId="input12"><label>偶尔不能控制（5分）</label><br/>
+							<input type="radio" name="input5" value="3" id="input5" class="input-radio num-radio" num="0" inputId="input12"><label>失禁（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.6 小便</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input6" value="1" id="input6" class="input-radio num-radio" num="10" inputId="input12"><label>能控制（10分）</label><br/>
+							<input type="radio" name="input6" value="2" id="input6" class="input-radio num-radio" num="5" inputId="input12"><label>偶尔不能控制（5分）</label><br/>
+							<input type="radio" name="input6" value="3" id="input6" class="input-radio num-radio" num="0" inputId="input12"><label>失禁（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.7 用厕</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input7" value="1" id="input7" class="input-radio num-radio" num="10" inputId="input12"><label>独立（10分）</label><br/>
+							<input type="radio" name="input7" value="2" id="input7" class="input-radio num-radio" num="5" inputId="input12"><label>需要一些帮助，但能做一些（5分）</label><br/>
+							<input type="radio" name="input7" value="3" id="input7" class="input-radio num-radio" num="0" inputId="input12"><label>依赖（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.8 床椅间移动</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input8" value="1" id="input8" class="input-radio num-radio" num="15" inputId="input12"><label>独立（15分）</label><br/>
+							<input type="radio" name="input8" value="2" id="input8" class="input-radio num-radio" num="10" inputId="input12"><label>少许帮助（10分）</label><br/>
+							<input type="radio" name="input8" value="3" id="input8" class="input-radio num-radio" num="5" inputId="input12"><label>大帮助，需1-2人体力上帮助，能坐（5分）</label><br/>
+							<input type="radio" name="input8" value="4" id="input8" class="input-radio num-radio" num="0" inputId="input12"><label>不能坐（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.9 平地移动</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input9" value="1" id="input9" class="input-radio num-radio" num="15" inputId="input12"><label>独立>50米（15分）</label><br/>
+							<input type="radio" name="input9" value="2" id="input9" class="input-radio num-radio" num="10" inputId="input12"><label>行走时1人帮助>50米（10分）</label><br/>
+							<input type="radio" name="input9" value="3" id="input9" class="input-radio num-radio" num="5" inputId="input12"><label>独立使用轮椅>50米（5分）</label><br/>
+							<input type="radio" name="input9" value="4" id="input9" class="input-radio num-radio" num="0" inputId="input12"><label>不能走动，或<50米（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">2.10 上下楼梯</div>
+						<div class="checkbox-group" style="border-bottom: 0;">
+							<input type="radio" name="input10" value="1" id="input10" class="input-radio num-radio" num="10" inputId="input12"><label>独立（10分）</label><br/>
+							<input type="radio" name="input10" value="2" id="input10" class="input-radio num-radio" num="5" inputId="input12"><label>需要帮助（5分）</label><br/>
+							<input type="radio" name="input10" value="3" id="input10" class="input-radio num-radio" num="0" inputId="input12"><label>不能（0分）</label><br/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">填写时间</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<input id="input11" name="input11" type="text" class="input-time edit-time" placeholder="自动生成" readonly>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+								<div class="input-title">总分</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<input id="input12" name="input12" type="text" class="mui-input-clear" placeholder="勾选后自动生成" readonly>
+						</div>
+						<!--<div class="checkbox-group" style="border-bottom: 0;">
+								<input id="input13" name="input13" type="text" class="mui-input-clear" placeholder="+添加一次评分记录" readonly>
+						</div>-->
+					</li>
+				</ul>
+			</form>
+
+			<form id="form2">
+				<div class="title mui-content-padded">3 ESSEN评分</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">3.1 ESSEN评分项</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="1" id="input14-1" num="0" inputId="input16">
+							<label for="input14-1"><65岁（0分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="2" id="input14-2" num="1" inputId="input16">
+							<label for="input14-2">65-75岁（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="3" id="input14-3" num="2" inputId="input16">
+							<label for="input14-3">>75岁（2分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="4" id="input14-4" num="1" inputId="input16">
+							<label for="input14-4">高血压（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="5" id="input14-5" num="1" inputId="input16">
+							<label for="input14-5">糖尿病（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="6" id="input14-6" num="1" inputId="input16">
+							<label for="input14-6">吸烟（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="7" id="input14-7" num="1" inputId="input16">
+							<label for="input14-7">既往心肌梗死（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="8" id="input14-8" num="1" inputId="input16">
+							<label for="input14-8">其他心脏病（除外心梗或房颤）（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="9" id="input14-9" num="1" inputId="input16">
+							<label for="input14-9">既往TIA或缺血性卒中病史（1分）</label>
+						</div>
+						<div class="checkbox-group">
+							<input type="checkbox" class="input-checkbox num-checkbox" name="input14" value="10" id="input14-10" num="1" inputId="input16">
+							<label for="input14-10">外周动脉疾病（1分）</label>
+						</div>
+
+						<div class="input-group">
+							<div class="time-group" style="padding-left: 0;">
+								<div class="input-title">填写时间</div>
+								<input type="text" id="input15" name="input15" value="" class="input-time edit-time" placeholder="自动生成" readonly>
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">总分</label>
+								<input type="text" id="input16" name="input16" class="mui-input-clear" placeholder="勾选后自动生成" readonly>
+							</div>
+					</li>
+				</ul>
+			</form>
+
+			<form id="FORM_B">
+				<div class="title mui-content-padded">4 MRS（改良Rankin分级）</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+							<div class="picker-group" style="padding-left: 0;">
+								<select name="B_TYPE" id="B_TYPE" class="SELECT_TYPE">
+									<option value="1">第一次MRS</option>
+									<option value="2">第二次MRS</option>
+									<option value="3">第三次MRS</option>
+									<option value="4">第四次MRS</option>
+									<option value="5">第五次MRS</option>
+									<option value="6">第六次MRS</option>
+									<option value="7">第七次MRS</option>
+									<option value="8">第八次MRS</option>
+									<option value="9">第九次MRS</option>
+									<option value="10">第十次MRS</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">4.1 MRS（改良Rankin分级）选项</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input17" value="1" id="input17" class="input-radio"><label>完全无症状</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input17" value="2" id="input17" class="input-radio"><label>尽管有症状，但无明显功能障碍，能完成所有日常职责和活动</label>
+							</div>
+						</div>
+
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input17" value="3" id="input17" class="input-radio"><label>轻度残疾，不能完成病前所有活动，但不需帮助，能照顾自己的事务</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input17" value="4" id="input17" class="input-radio"><label>中度残疾，需要一些帮助，但行走不需要帮助</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input17" value="5" id="input17" class="input-radio"><label>中重度残疾，不能独立行走，无他人帮助不能满足自身需要</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input17" value="6" id="input17" class="input-radio"><label>重度残疾，卧床、失禁,要求持续护理和关注</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">填写时患者状态
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="input18" name="input18">
+									<option value="1" selected>入院</option>
+									<option value="2">出院</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">填写时间
+						<div class="input-group" style="border-bottom: 0;">
+							<input id="input19" name="input19" type="text" class="input-time edit-time" placeholder="自动生成" readonly>
+						</div>
+					</li>
+				</ul>
+			</form>
+
+			<form id="FORM_C">
+				<div class="title mui-content-padded">5 卒中量表（NIHSS）</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group" style="margin-top: 0;border-bottom: 0;">
+							<div class="picker-group" style="padding-left: 0;">
+								<select name="C_TYPE" id="C_TYPE" class="SELECT_TYPE">
+									<option value="1">入院（溶栓前）</option>
+									<option value="2">溶栓后</option>
+									<option value="3">出院</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">1a. 意识水平</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input21" value="1" id="input21" class="input-radio num-radio" num="0" inputId="input38"><label>清醒，反应灵敏（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input21" value="2" id="input21" class="input-radio num-radio" num="1" inputId="input38"><label>嗜睡，轻微刺激能唤醒，可回答问题，执行指令（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input21" value="3" id="input21" class="input-radio num-radio" num="2" inputId="input38"><label>昏睡或反应迟钝，需强烈反复刺激或疼痛刺激才有非固定模式的反应（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input21" value="4" id="input21" class="input-radio num-radio" num="3" inputId="input38"><label>昏迷，仅有反射性活动或自发性反应或完全无反应、软瘫、无反应（3分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">1b. 意识水平提问、年龄</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input22" value="1" id="input22" class="input-radio num-radio" num="0" inputId="input38"><label>两项均正确（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input22" value="2" id="input22" class="input-radio num-radio" num="1" inputId="input38"><label>一项正确（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input22" value="3" id="input22" class="input-radio num-radio" num="2" inputId="input38"><label>两项均不正确（2分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">1c. 意识水平指令：睁闭眼；非瘫痪侧握拳</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input23" value="1" id="input23" class="input-radio num-radio" num="0" inputId="input38"><label>两项均正确（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input23" value="2" id="input23" class="input-radio num-radio" num="1" inputId="input38"><label>一项正确（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input23" value="3" id="input23" class="input-radio num-radio" num="2" inputId="input38"><label>两项均不正确（2分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">2. 凝视：只测试水平眼球运动</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input24" value="1" id="input24" class="input-radio num-radio" num="0" inputId="input38"><label>清醒，反应灵敏（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input24" value="2" id="input24" class="input-radio num-radio" num="1" inputId="input38"><label>部分凝视麻痹（单眼或双眼凝视异常，但无被动凝视或完全凝视麻痹）（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input24" value="3" id="input24" class="input-radio num-radio" num="2" inputId="input38"><label>被动凝视或完全凝视麻痹（不能被头眼反射克服）（2分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">3. 视野</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input25" value="1" id="input25" class="input-radio num-radio" num="0" inputId="input38"><label>无视野缺损（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input25" value="2" id="input25" class="input-radio num-radio" num="1" inputId="input38"><label>部分偏盲（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input25" value="3" id="input25" class="input-radio num-radio" num="2" inputId="input38"><label>完全偏盲（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input25" value="4" id="input25" class="input-radio num-radio" num="3" inputId="input38"><label>双侧偏盲（全盲，包括皮质盲）（3分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">4. 面瘫</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input26" value="1" id="input26" class="input-radio num-radio" num="0" inputId="input38"><label>正常（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input26" value="2" id="input26" class="input-radio num-radio" num="1" inputId="input38"><label>最小（鼻唇沟变平、微笑时不对称）（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input26" value="3" id="input26" class="input-radio num-radio" num="2" inputId="input38"><label>部分（下面部完全或几乎完全瘫痪，中枢性瘫）（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input26" value="4" id="input26" class="input-radio num-radio" num="3" inputId="input38"><label>完全（单或双侧瘫痪，上下面部缺乏运动，周围性瘫）（3分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">5a. 左上肢运动</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input27" value="1" id="input27" class="input-radio num-radio" num="0" inputId="input38"><label>于要求位置坚持10秒，无下落（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input27" value="2" id="input27" class="input-radio num-radio" num="1" inputId="input38"><label>能抬起但不能坚持10秒，下落时不撞击床或其他支持物（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input27" value="3" id="input27" class="input-radio num-radio" num="2" inputId="input38"><label>能对抗一些重力，但不能维持坐位90度或仰位45度，较快下落到床上（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input27" value="4" id="input27" class="input-radio num-radio" num="3" inputId="input38"><label>不能抵抗重力，上肢快速下落（3分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input27" value="5" id="input27" class="input-radio num-radio" num="4" inputId="input38"><label>无运动（4分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input27" value="6" id="input27" class="input-radio num-radio" num="9" inputId="input38"><label>截肢或关节融合（9分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">5b. 右上肢运动</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input28" value="1" id="input28" class="input-radio num-radio" num="0" inputId="input38"><label>于要求位置坚持10秒，无下落（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input28" value="2" id="input28" class="input-radio num-radio" num="1" inputId="input38"><label>能抬起但不能坚持10秒，下落时不撞击床或其他支持物（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input28" value="3" id="input28" class="input-radio num-radio" num="2" inputId="input38"><label>能对抗一些重力，但不能维持坐位90度或仰位45度，较快下落到床上（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input28" value="4" id="input28" class="input-radio num-radio" num="3" inputId="input38"><label>不能抵抗重力，上肢快速下落（3分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input28" value="5" id="input28" class="input-radio num-radio" num="4" inputId="input38"><label>无运动（4分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input28" value="6" id="input28" class="input-radio num-radio" num="9" inputId="input38"><label>截肢或关节融合（9分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">6a. 左下肢运动</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input29" value="1" id="input29" class="input-radio num-radio" num="0" inputId="input38"><label>无下落，于要求位置坚持5秒（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input29" value="2" id="input29" class="input-radio num-radio" num="1" inputId="input38"><label>5秒末下落，不撞击床（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input29" value="3" id="input29" class="input-radio num-radio" num="2" inputId="input38"><label>5秒内较快下落到床上，但可抗重力（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input29" value="4" id="input29" class="input-radio num-radio" num="3" inputId="input38"><label>快速落下，不能抗重力（3分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input29" value="5" id="input29" class="input-radio num-radio" num="4" inputId="input38"><label>无运动（4分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input29" value="6" id="input29" class="input-radio num-radio" num="9" inputId="input38"><label>截肢或关节融合（9分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">6b. 右下肢运动</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input30" value="1" id="input30" class="input-radio num-radio" num="0" inputId="input38"><label>无下落，于要求位置坚持5秒（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input30" value="2" id="input30" class="input-radio num-radio" num="1" inputId="input38"><label>5秒末下落，不撞击床（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input30" value="3" id="input30" class="input-radio num-radio" num="2" inputId="input38"><label>5秒内较快下落到床上，但可抗重力（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input30" value="4" id="input30" class="input-radio num-radio" num="3" inputId="input38"><label>快速落下，不能抗重力（3分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input30" value="5" id="input30" class="input-radio num-radio" num="4" inputId="input38"><label>无运动（4分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input30" value="6" id="input30" class="input-radio num-radio" num="9" inputId="input38"><label>截肢或关节融合（9分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">7. 共济失调</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="1" id="input31" class="input-radio num-radio" num="0" inputId="input38"><label>无共济失调（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="2" id="input31" class="input-radio num-radio" num="1" inputId="input38"><label>一个肢体有（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="3" id="input31" class="input-radio num-radio" num="2" inputId="input38"><label>两个肢体均有（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="4" id="input31" class="input-radio num-radio" num="9" inputId="input38"><label>左上肢截肢或关节融合（9分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="5" id="input31" class="input-radio num-radio" num="9" inputId="input38"><label>右上肢截肢或关节融合（9分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="6" id="input31" class="input-radio num-radio" num="9" inputId="input38"><label>左下肢截肢或关节融合（9分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input31" value="7" id="input31" class="input-radio num-radio" num="9" inputId="input38"><label>右下肢截肢或关节融合（9分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">8. 感觉</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input32" value="1" id="input32" class="input-radio num-radio" num="0" inputId="input38"><label>正常，没有感觉缺失（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input32" value="2" id="input32" class="input-radio num-radio" num="1" inputId="input38"><label>轻到中度感觉障碍，患侧针刺感不明显或为钝性或仅有触感（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input32" value="3" id="input32" class="input-radio num-radio" num="2" inputId="input38"><label>严重到完全感觉缺失（面、上肢、下肢无触觉）（2分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">9. 语言：命名、阅读测试</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input33" value="1" id="input33" class="input-radio num-radio" num="0" inputId="input38"><label>正常，无失语（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input33" value="2" id="input33" class="input-radio num-radio" num="1" inputId="input38"><label>轻到中度：流利程度和理解能力有一些缺损，但表达无明显受限（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input33" value="3" id="input33" class="input-radio num-radio" num="2" inputId="input38"><label>严重失语，交流是通过患者破碎的语言表达，听者须推理、询问、猜测，交流困难（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input33" value="4" id="input33" class="input-radio num-radio" num="3" inputId="input38"><label>哑或完全失语，不能讲或不能理解（3分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">10. 构音障碍</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input34" value="1" id="input34" class="input-radio num-radio" num="0" inputId="input38"><label>正常（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input34" value="2" id="input34" class="input-radio num-radio" num="1" inputId="input38"><label>轻到中度，至少有一些发音不清，虽有困难但能被理解（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input34" value="3" id="input34" class="input-radio num-radio" num="2" inputId="input38"><label>言语不清，不能被理解，但无失语或  与失语不成比例，或失音（2分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input34" value="4" id="input34" class="input-radio num-radio" num="9" inputId="input38"><label>气管插管或其他物理障碍（9分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="input-title">11. 忽视症</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input35" value="1" id="input35" class="input-radio num-radio" num="0" inputId="input38"><label>正常（0分）</label>
+							</div>
+						</div>
+						<div class="radio-group">
+							<div class="radio-item">
+								<input type="radio" name="input35" value="2" id="input35" class="input-radio num-radio" num="1" inputId="input38"><label>视、触、听、空间觉或个人的忽视；或对任何一种感觉的双侧同时刺激消失（1分）</label>
+							</div>
+						</div>
+						<div class="radio-group" style="border-bottom: 0;">
+							<div class="radio-item">
+								<input type="radio" name="input35" value="3" id="input35" class="input-radio num-radio" num="2" inputId="input38"><label>严重的偏身忽视：超过一种形式的偏身忽视；不认识自己的手；只对一侧空间定位（2分）</label>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">填写时患者状态</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="input36" name="input36">
+									<option value="1" selected>出院</option>
+									<option value="2">溶栓前</option>
+									<option value="3">溶栓后</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-title">填写时间</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<input id="input37" name="input37" type="text" class="input-time edit-time" placeholder="自动生成" readonly>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+							<div class="input-title">总分</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<input id="input38" name="input38" type="text" class="mui-input-clear" placeholder="勾选后自动生成" readonly>
+						</div>
+					</li>
+				</ul>
+			</form>
+
+			<!--<input type="button" value="提交" onclick="submit(FORM_DATA);" />-->
+
+			<!-------------------------------------------------分割线-----js标签库------------------------------------------------------>
+
+			</div>
+			<script src="js/jquery-3.0.0.min.js"></script>
+			<script src="js/mui.min.js"></script>
+			<script src="js/mui.enterfocus.js"></script>
+			<script src="js/mui.picker.js"></script>
+			<script src="js/mui.poppicker.js"></script>
+			<script src="js/mui.picker.min.js"></script>
+			<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+			<script>
+				'use strict'
+				var FORM_DATA = {
+					A_DATA: [],
+					B_DATA: [],
+					C_DATA: [],
+				};
+				initFormData(FORM_DATA);
+				mui('form').on('change', 'select', function() {
+					var name = this.getAttribute("name");
+					if(name.indexOf('_TYPE') > -1) {
+						var DATA_KEY = name.substr(0, 2) + 'DATA';
+						var INDEX = $("select[name=" + name + "]")[0].value - 1;
+						setData(FORM_DATA, FORM_DATA[DATA_KEY][INDEX]);
+					}
+				});
+				document.addEventListener('message', function(e) {
+					const message = e.data;
+					if(JSON.parse(message).type === 'SET') {
+						var formData = JSON.parse(JSON.parse(message).formData);
+						setData(FORM_DATA, formData);
+					} else if(JSON.parse(message).type === 'GET') {
+						submit(FORM_DATA);
+					}
+				});
+
+				function submit(FORM_DATA) {
+					$('.edit-time').each(function() {
+						this.value = formatTimeString();
+					});
+					var form1Obj = $("#form1").serializeObject();
+					var form2Obj = $("#form2").serializeObject();
+					var jsonObj = {};
+					for(var key in form1Obj) {
+						jsonObj[key] = form1Obj[key];
+					}
+					for(var key in form2Obj) {
+						jsonObj[key] = form2Obj[key];
+					}
+					//					Object.assign(jsonObj, form1Obj, form2Obj);
+					for(var key in FORM_DATA) {
+						var formKey = key.split('_')[0];
+						var formObj = $("#FORM_" + formKey).serializeForm(FORM_DATA, key);
+						//						Object.assign(jsonObj, formObj);
+						for(var key in formObj) {
+							jsonObj[key] = formObj[key];
+						}
+					}
+					sendData(JSON.stringify(jsonObj));
+				}
+			</script>
+	</body>
+
+</html>

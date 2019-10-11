@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>1003入院记录模板</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/template.css" />
+		<!-- 通过 条件注释  让 这个js文件 在指定的 IE版本中 才被加载  -->
+		<!--[if lte IE 8]>
+        <script src='js/html5shiv.min.js'></script>
+        <![endif]-->
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form id="form1" name="form1">
+				<div class="title mui-content-padded">1 患者个人信息</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">患者姓名</div>
+							<div class="mui-input-row">
+								<input id="patientName" name="patientName" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">住院号</div>
+							<div class="mui-input-row">
+								<input id="input1" name="input1" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">患者年龄</div>
+							<div class="mui-input-row">
+								<input id="age" name="age" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">性别</div>
+							<div class="picker-group" style="padding-left: 0;">
+								<select id="sex" name="sex">
+									<option value="1" selected>男</option>
+									<option value="2">女</option>
+								</select>
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">婚姻</div>
+							<div class="mui-input-row">
+								<input id="input2" name="input2" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">出生地</div>
+							<div class="picker-group">
+								<input type="text" readonly name="input3" id="input3" value="" class="cityPicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">民族</div>
+							<div class="picker-group">
+								<input type="text" readonly id="input4" name="input4" value="" class="ethnicPicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">发病季节</div>
+							<div class="mui-input-row">
+								<input id="input5" name="input5" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">从事职业</div>
+							<div class="mui-input-row">
+								<input id="input6" name="input6" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">工作单位</div>
+							<div class="mui-input-row">
+								<input id="input7" name="input7" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">地址</div>
+							<div class="mui-input-row">
+								<input id="input8" name="input8" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">供史者(注明与患者关系)</div>
+							<div class="mui-input-row">
+								<input id="input9" name="input9" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">入院日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" name="input10" id="input10" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">记录日期</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" name="input11" id="input11" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">联系电话</div>
+							<div class="mui-input-row">
+								<input id="telephone" name="telephone" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">2 主述病史</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">主述</div>
+							<div class="mui-input-row">
+								<textarea id="input12" name="input12" rows="3" placeholder="请填写主述内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">现病史</div>
+							<div class="mui-input-row">
+								<textarea id="input13" name="input13" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">既往史</div>
+							<div class="mui-input-row">
+								<textarea id="input14" name="input14" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">个人史</div>
+							<div class="mui-input-row">
+								<textarea id="input15" name="input15" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">过敏史</div>
+							<div class="mui-input-row">
+								<textarea id="input16" name="input16" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">婚育史</div>
+							<div class="mui-input-row">
+								<textarea id="input17" name="input17" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">月经史</div>
+							<div class="mui-input-row">
+								<textarea id="input18" name="input18" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">家族史</div>
+							<div class="mui-input-row">
+								<textarea id="input19" name="input19" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">3 检查记录</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-title">四诊概要</div>
+						<div class="input-title">【主症】</div>
+						<div class="input-group" style="margin-left: 8px;">
+							<div class="mui-input-row">
+								<textarea id="input20" name="input20" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-title">【兼症】</div>
+						<div class="input-group" style="margin-left: 8px;">
+							<div class="mui-input-row">
+								<textarea id="input21" name="input21" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-title">【舌象】</div>
+						<div class="input-group" style="margin-left: 8px;">
+							<div class="mui-input-row">
+								<textarea id="input22" name="input22" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-title">【脉象】</div>
+						<div class="input-group">
+							<div class="mui-input-row" style="padding-left: 8px;padding-bottom: 10px">
+								<textarea id="input23" name="input23" rows="3" placeholder="请填写"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">体格检查</div>
+							<div class="mui-input-row">
+								<textarea id="input24" name="input24" rows="3" placeholder="请填写检查内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">专科检查</div>
+							<div class="mui-input-row">
+								<textarea id="input25" name="input25" rows="3" placeholder="请填写检查内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">辅助检查</div>
+							<div class="mui-input-row">
+								<textarea id="input26" name="input26" rows="3" placeholder="请填写检查内容"></textarea>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="title mui-content-padded">4 诊断记录</div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="input-group">
+							<div class="input-title">初步诊断</div>
+							<div class="mui-input-row">
+								<textarea id="input27" name="input27" rows="3" placeholder="请填写诊断内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">住院医师</div>
+							<div class="mui-input-row">
+								<input id="input28" name="input28" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">主治医师</div>
+							<div class="mui-input-row">
+								<input id="input29" name="input29" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-group">
+							<div class="input-title">入院诊断</div>
+							<div class="mui-input-row">
+								<textarea id="input30" name="input30" rows="3" placeholder="请填写诊断内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">主治医师</div>
+							<div class="mui-input-row">
+								<input id="input31" name="input31" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-group">
+							<div class="input-title">修正诊断</div>
+							<div class="mui-input-row">
+								<textarea id="input32" name="input32" rows="3" placeholder="请填写诊断内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">修正时间</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" name="input33" id="input33" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">主治医师</div>
+							<div class="mui-input-row">
+								<input id="input34" name="input34" type="text" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view table-group">
+					<li class="mui-table-view-cell" style="padding-right: 0px;">
+						<div class="input-group">
+							<div class="input-title">补充诊断</div>
+							<div class="mui-input-row">
+								<textarea id="input35" name="input35" rows="3" placeholder="请填写诊断内容"></textarea>
+							</div>
+						</div>
+						<div class="input-group">
+							<div class="input-title">补充时间</div>
+							<div class="time-group" style="padding-left: 0;">
+								<input readonly type="text" name="input36" id="input36" value="" data-options='{}' class="input-time timePicker" placeholder="请选择">
+								<img src="img/row_down.png" alt="" class="picker-icon" />
+							</div>
+						</div>
+						<div class="input-group" style="border-bottom: 0;">
+							<div class="input-title">
+								主治医师
+							</div>
+							<div class="input-tip"></div>
+							<div class="mui-input-row">
+								<input id="input37" name="input37" type="text" onblur="lengthLimit(this)" class="mui-input-clear" placeholder="请填写">
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<!--<input type="button" value="提交" onclick="submit(FORM_DATA);" />-->
+		</div>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.enterfocus.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ethnic.js" type="text/javascript" charset="utf-8"></script>
+		<script src='js/autosize.js'></script>
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			'use strict'
+			autosize(document.querySelectorAll('textarea'));
+			var FORM_DATA = {};
+			initFormData(FORM_DATA);
+			mui('form').on('change', 'select', function() {
+				var name = this.getAttribute("name");
+				if(name.indexOf('_TYPE') > -1) {
+					var DATA_KEY = name.substr(0, 2) + 'DATA';
+					var INDEX = $("select[name=" + name + "]")[0].value - 1;
+					setData(FORM_DATA, FORM_DATA[DATA_KEY][INDEX]);
+				}
+			});
+			document.addEventListener('message', function(e) {
+				const message = e.data;
+				if(JSON.parse(message).type === 'SET') {
+					var formData = JSON.parse(JSON.parse(message).formData);
+					setData(FORM_DATA, formData);
+				} else if(JSON.parse(message).type === 'GET') {
+					submit(FORM_DATA);
+				}
+			});
+
+			function submit(FORM_DATA) {
+				$('.edit-time').each(function() {
+					this.value = formatTimeString();
+				});
+				var form1Obj = $("#form1").serializeObject();
+				var jsonObj = {};
+				for(var key in form1Obj) {
+					jsonObj[key] = form1Obj[key];
+				}
+				console.log(jsonObj)
+				sendData(JSON.stringify(jsonObj));
+			}
+
+			function lengthLimit(text) {
+				//				if(text.value.length>10){
+				//					console.log(text.parentElement.previousElementSibling)
+				//					var ele = text.parentElement.previousElementSibling;
+				//					if(ele.className==='input-tip'){
+				//						ele.innerHTML='input-tip';
+				//					}
+				//				}
+			}
+		</script>
+	</body>
+
+</html>
